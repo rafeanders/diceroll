@@ -8,9 +8,71 @@ import android.view.contentcapture.DataShareWriteAdapter;
 
 public class ImageObjects extends Activity {
 
+    // Background image after die selection
+    public static Drawable DefaultBG(int i) {
+        Drawable d4BG = R.id.d4_4;
+        Drawable d6BG = R.id.d6_6;
+        Drawable d8BG = R.id.d8_8;
+        Drawable d10BG = R.id.d10_10;
+        Drawable d12BG = R.id.d12_12;
+        Drawable d20BG = R.id.d20_20;
+
+        switch (i) {
+            case 20: {
+                return d20BG;
+            }
+            case 12: {
+                return d12BG;
+            }
+            case 10: {
+                return d10BG;
+            }
+            case 8: {
+                return d8BG;
+            }
+            case 6: {
+                return d6BG;
+            }
+            case 4: {
+                return d4BG;
+            }
+        } return null;
+    }
+
+    //Animation to play while rolling
+    public static Drawable Animation(int i) {
+        Drawable d4Animation = R.id.d4_anim;
+        Drawable d6Animation = R.id.d6_anim;
+        Drawable d8Animation= R.id.d8_anim;
+        Drawable d10Animation = R.id.d10_anim;
+        Drawable d12Animation = R.id.d12_anim;
+        Drawable d20Animation = R.id.d20_anim;
+
+        switch (i) {
+            case 20: {
+                return d20Animation;
+            }
+            case 12: {
+                return d12Animation;
+            }
+            case 10: {
+                return d10Animation;
+            }
+            case 8: {
+                return d8Animation;
+            }
+            case 6: {
+                return d6Animation;
+            }
+            case 4: {
+                return d4Animation;
+            }
+        } return null;
+        }
+    }
+
     // D4 images
     public static Drawable D4Image(int i) {
-        Drawable d4Animation = R.id.d4_anim;
         Drawable d4One = R.id.d4_1;
         Drawable d4Two = R.id.d4_2;
         Drawable d4Three = R.id.d4_3;
@@ -42,7 +104,6 @@ public class ImageObjects extends Activity {
 
     //D6 images
     public static Drawable D6Image(int i) {
-        Drawable d6Animation = R.id.d6_anim;
         Drawable d6One = R.id.d6_1;
         Drawable d6Two = R.id.d6_2;
         Drawable d6Three = R.id.d6_3;
@@ -84,7 +145,6 @@ public class ImageObjects extends Activity {
 
     //D8 images
     public static Drawable D8Image(int i) {
-        Drawable d8Animation= R.id.d8_anim;
         Drawable d8One = R.id.d8_1;
         Drawable d8Two = R.id.d8_2;
         Drawable d8Three = R.id.d8_3;
@@ -136,7 +196,6 @@ public class ImageObjects extends Activity {
 
     //D10 images
     public static Drawable D10Image(int i) {
-        Drawable d10Animation = R.id.d10_anim;
         Drawable d10One = R.id.d10_1;
         Drawable d10Two = R.id.d10_2;
         Drawable d10Three = R.id.d10_3;
@@ -198,7 +257,6 @@ public class ImageObjects extends Activity {
 
     //D12 images
     public static Drawable D12Image(int i) {
-        Drawable d12Animation = R.id.d12_anim;
         Drawable d12One = R.id.d12_1;
         Drawable d12Two = R.id.d12_2;
         Drawable d12Three = R.id.d12_3;
@@ -270,7 +328,6 @@ public class ImageObjects extends Activity {
 
     //D20 images
     public static Drawable D20Image(int i) {
-        Drawable d20Animation = R.id.d20_anim;
         Drawable d20One = R.id.d20_1;
         Drawable d20Two = R.id.d20_2;
         Drawable d20Three = R.id.d20_3;

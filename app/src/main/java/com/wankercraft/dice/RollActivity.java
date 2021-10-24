@@ -38,16 +38,17 @@ public class RollActivity extends Activity {
         //imageToDisplay = numberSides;
 
         ImageButton mRollButton = (ImageButton) findViewById(R.id.rollButton);
-        mRollButton.setBackground(); //Set the button background per dice selected
+        mRollButton.setBackground(ImageObjects.DefaultBG(numberSides)); //Set the button background per dice selected
         mRollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!isRolling) {
                     isRolling = true; // We are now rolling the die
-                    v.setBackground(ImageObjects.);// Change button image to animation of die rolling
+                    ;// Change button image to animation of die rolling
                     // play sound of die rolling
-                    // Wait x seconds for roll animation
                     rollDie();
+                    v.setBackground(ImageObjects.Animation(numberSides));
+                    // Wait x seconds for roll animation
                     // display die side corresponding to random number generated
                     switch (numberSides) {
                         case 4: {
@@ -74,7 +75,6 @@ public class RollActivity extends Activity {
                             v.setBackground(ImageObjects.D20Image(rollValue));
                             break;
                         }
-
                     }
                 }
             }
