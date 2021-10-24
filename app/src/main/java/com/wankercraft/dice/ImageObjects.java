@@ -11,7 +11,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class ImageObjects extends Activity {
 
-    private Resources res = getResources();
+
 
     // Background image after die selection
     public static Drawable DefaultBG(int i) {
@@ -77,11 +77,13 @@ public class ImageObjects extends Activity {
 
     // D4 images
     public static Drawable D4Image(int i) {
+        //Instance of this class to call non static method
+        ImageObjects io = new ImageObjects();
 
-        Drawable d4One = R.drawable.d4_1;
-        Drawable d4Two = R.id.d4_2;
-        Drawable d4Three = R.id.d4_3;
-        Drawable d4Four = R.id.d4_4;
+        Drawable d4One = io.getDrawable(R.drawable.d4_1);
+        Drawable d4Two = io.getDrawable(R.id.d4_2);
+        Drawable d4Three = io.getDrawable(R.id.d4_3);
+        Drawable d4Four = io.getDrawable(R.id.d4_4);
 
         switch (i) {
             case 5: {

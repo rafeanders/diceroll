@@ -50,7 +50,7 @@ public class RollActivity extends Activity {
                     // play sound of die rolling
                     rollDie();
                     v.setBackground(ImageObjects.Animation(numberSides));
-                    timer.wait(3000);
+                    //timer.wait(3000);
                     // Wait x seconds for roll animation
                     // display die side corresponding to random number generated
                     switch (numberSides) {
