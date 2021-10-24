@@ -2,11 +2,16 @@ package com.wankercraft.dice;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.contentcapture.DataShareWriteAdapter;
 
+import androidx.core.content.res.ResourcesCompat;
+
 
 public class ImageObjects extends Activity {
+
+    private Resources res = getResources();
 
     // Background image after die selection
     public static Drawable DefaultBG(int i) {
@@ -68,12 +73,12 @@ public class ImageObjects extends Activity {
                 return d4Animation;
             }
         } return null;
-        }
     }
 
     // D4 images
     public static Drawable D4Image(int i) {
-        Drawable d4One = R.id.d4_1;
+
+        Drawable d4One = R.drawable.d4_1;
         Drawable d4Two = R.id.d4_2;
         Drawable d4Three = R.id.d4_3;
         Drawable d4Four = R.id.d4_4;

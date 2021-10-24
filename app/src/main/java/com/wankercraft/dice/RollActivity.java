@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 import java.util.Random;
+import java.util.Timer;
 
 public class RollActivity extends Activity {
 
@@ -23,6 +24,7 @@ public class RollActivity extends Activity {
     int rollValue = 0;
     private boolean isRolling = false;
     AnimationDrawable rollingAnimation;
+    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class RollActivity extends Activity {
                     // play sound of die rolling
                     rollDie();
                     v.setBackground(ImageObjects.Animation(numberSides));
+                    timer.wait(3000);
                     // Wait x seconds for roll animation
                     // display die side corresponding to random number generated
                     switch (numberSides) {
