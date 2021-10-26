@@ -2,19 +2,14 @@ package com.wankercraft.dice;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.RemoteViewsService;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 import java.util.Random;
-import java.util.Timer;
 
 public class RollActivity extends Activity {
 
@@ -23,8 +18,6 @@ public class RollActivity extends Activity {
     int numberSides = 0;
     int rollValue = 0;
     private boolean isRolling = false;
-    AnimationDrawable rollingAnimation;
-    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +25,6 @@ public class RollActivity extends Activity {
 
         binding = ActivityRollBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         mTextView = binding.text;
 
         Intent intent = getIntent();
@@ -48,10 +40,9 @@ public class RollActivity extends Activity {
                     isRolling = true; // We are now rolling the die
                     ;// Change button image to animation of die rolling
                     // play sound of die rolling
-                    rollDie();
                     v.setBackground(ImageObjects.Animation(numberSides));
-                    //timer.wait(3000);
                     // Wait x seconds for roll animation
+                    RollAnimation.rollAnimation();
                     // display die side corresponding to random number generated
                     switch (numberSides) {
                         case 4: {
