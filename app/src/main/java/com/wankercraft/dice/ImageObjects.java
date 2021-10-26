@@ -15,12 +15,12 @@ public class ImageObjects extends Activity {
 
     // Background image after die selection
     public static Drawable DefaultBG(int i) {
-        Drawable d4BG = R.id.d4_4;
-        Drawable d6BG = R.id.d6_6;
-        Drawable d8BG = R.id.d8_8;
-        Drawable d10BG = R.id.d10_10;
-        Drawable d12BG = R.id.d12_12;
-        Drawable d20BG = R.id.d20_20;
+        Drawable d4BG = io.getDrawable(R.drawable.d4_4);
+        Drawable d6BG = io.getDrawable(R.drawable.d6_6);
+        Drawable d8BG = io.getDrawable(R.drawable.d8_8);
+        Drawable d10BG = io.getDrawable(R.drawable.d10_10);
+        Drawable d12BG = io.getDrawable(R.drawable.d12_12);
+        Drawable d20BG = io.getDrawable(R.drawable.d20_20);
 
         switch (i) {
             case 20: {
@@ -46,12 +46,12 @@ public class ImageObjects extends Activity {
 
     //Animation to play while rolling
     public static Drawable Animation(int i) {
-        Drawable d4Animation = R.id.d4_anim;
-        Drawable d6Animation = R.id.d6_anim;
-        Drawable d8Animation= R.id.d8_anim;
-        Drawable d10Animation = R.id.d10_anim;
-        Drawable d12Animation = R.id.d12_anim;
-        Drawable d20Animation = R.id.d20_anim;
+        Drawable d4Animation = io.getDrawable(R.drawable.d4_anim);
+        Drawable d6Animation = io.getDrawable(R.drawable.d6_anim);
+        Drawable d8Animation= io.getDrawable(R.drawable.d8_anim);
+        Drawable d10Animation = io.getDrawable(R.drawable.d10_anim);
+        Drawable d12Animation = io.getDrawable(R.drawable.d12_anim);
+        Drawable d20Animation = io.getDrawable(R.drawable.d20_anim);
 
         switch (i) {
             case 20: {
@@ -86,10 +86,6 @@ public class ImageObjects extends Activity {
         Drawable d4Four = io.getDrawable(R.drawable.d4_4);
 
         switch (i) {
-            case 5: {
-                return d4Animation;
-                break;
-            }
             case 4: {
                 return d4Four;
                 break;
@@ -111,18 +107,14 @@ public class ImageObjects extends Activity {
 
     //D6 images
     public static Drawable D6Image(int i) {
-        Drawable d6One = R.id.d6_1;
-        Drawable d6Two = R.id.d6_2;
-        Drawable d6Three = R.id.d6_3;
-        Drawable d6Four = R.id.d6_4;
-        Drawable d6Five = R.id.d6_5;
-        Drawable d6Six = R.id.d6_6;
+        Drawable d6One = io.getDrawable(R.drawable.d6_1);
+        Drawable d6Two = io.getDrawable(R.drawable.d6_2);
+        Drawable d6Three = io.getDrawable(R.drawable.d6_3);
+        Drawable d6Four = io.getDrawable(R.drawable.d6_4);
+        Drawable d6Five = io.getDrawable(R.drawable.d6_5);
+        Drawable d6Six = io.getDrawable(R.drawable.d6_6);
 
         switch (i) {
-            case 7: {
-                return d6Animation;
-                break;
-            }
             case 6: {
                 return d6Six;
                 break;
@@ -152,20 +144,16 @@ public class ImageObjects extends Activity {
 
     //D8 images
     public static Drawable D8Image(int i) {
-        Drawable d8One = R.id.d8_1;
-        Drawable d8Two = R.id.d8_2;
-        Drawable d8Three = R.id.d8_3;
-        Drawable d8Four = R.id.d8_4;
-        Drawable d8Five = R.id.d8_5;
-        Drawable d8Six = R.id.d8_6;
-        Drawable d8Seven = R.id.d8_7;
-        Drawable d8Eight = R.id.d8_8;
+        Drawable d8One = io.getDrawable(R.drawable.d8_1);
+        Drawable d8Two = io.getDrawable(R.drawable.d8_2);
+        Drawable d8Three = io.getDrawable(R.drawable.d8_3);
+        Drawable d8Four = io.getDrawable(R.drawable.d8_4);
+        Drawable d8Five = io.getDrawable(R.drawable.d8_50;
+        Drawable d8Six = io.getDrawable(R.drawable.d8_6);
+        Drawable d8Seven = io.getDrawable(R.drawable.d8_7);
+        Drawable d8Eight = io.getDrawable(R.drawable.d8_8);
 
         switch (i) {
-            case 9: {
-                return d8Animation;
-                break;
-            }
             case 8: {
                 return d8Eight;
                 break;
@@ -203,22 +191,18 @@ public class ImageObjects extends Activity {
 
     //D10 images
     public static Drawable D10Image(int i) {
-        Drawable d10One = R.id.d10_1;
-        Drawable d10Two = R.id.d10_2;
-        Drawable d10Three = R.id.d10_3;
-        Drawable d10Four = R.id.d10_4;
-        Drawable d10Five = R.id.d10_5;
-        Drawable d10Six = R.id.d10_6;
-        Drawable d10Seven = R.id.d10_7;
-        Drawable d10Eight = R.id.d10_8;
-        Drawable d10Nine = R.id.d10_9;
-        Drawable d10Ten = R.id.d10_10;
+        Drawable d10One = io.getDrawable(R.drawable.d10_1);
+        Drawable d10Two = io.getDrawable(R.drawable.d10_2);
+        Drawable d10Three = io.getDrawable(R.drawable.d10_3);
+        Drawable d10Four = io.getDrawable(R.drawable.d10_4);
+        Drawable d10Five = io.getDrawable(R.drawable.d10_5);
+        Drawable d10Six = io.getDrawable(R.drawable.d10_6);
+        Drawable d10Seven = io.getDrawable(R.drawable.d10_7);
+        Drawable d10Eight = io.getDrawable(R.drawable.d10_8);
+        Drawable d10Nine = io.getDrawable(R.drawable.d10_9);
+        Drawable d10Ten = io.getDrawable(R.drawable.d10_10);
 
         switch (i) {
-            case 11: {
-                return d10Animation;
-                break;
-            }
             case 10: {
                 return d10Ten;
                 break;
@@ -264,24 +248,20 @@ public class ImageObjects extends Activity {
 
     //D12 images
     public static Drawable D12Image(int i) {
-        Drawable d12One = R.id.d12_1;
-        Drawable d12Two = R.id.d12_2;
-        Drawable d12Three = R.id.d12_3;
-        Drawable d12Four = R.id.d12_4;
-        Drawable d12Five = R.id.d12_5;
-        Drawable d12Six = R.id.d12_6;
-        Drawable d12Seven = R.id.d12_7;
-        Drawable d12Eight = R.id.d12_8;
-        Drawable d12Nine = R.id.d12_9;
-        Drawable d12Ten = R.id.d12_10;
-        Drawable d12Eleven = R.id.d12_11;
-        Drawable d12Twelve = R.id.d12_12;
+        Drawable d12One = io.getDrawable(R.drawable.d12_1);
+        Drawable d12Two = io.getDrawable(R.drawable.d12_2);
+        Drawable d12Three = io.getDrawable(R.drawable.d12_3);
+        Drawable d12Four = io.getDrawable(R.drawable.d12_4);
+        Drawable d12Five = io.getDrawable(R.drawable.d12_5);
+        Drawable d12Six = io.getDrawable(R.drawable.d12_6);
+        Drawable d12Seven = io.getDrawable(R.drawable.d12_7);
+        Drawable d12Eight = io.getDrawable(R.drawable.d12_8);
+        Drawable d12Nine = io.getDrawable(R.drawable.d12_9);
+        Drawable d12Ten = io.getDrawable(R.drawable.d12_10);
+        Drawable d12Eleven = io.getDrawable(R.drawable.d12_11);
+        Drawable d12Twelve = io.getDrawable(R.drawable.d12_12);
 
         switch (i) {
-            case 13: {
-                return d12Animation;
-                break;
-            }
             case 12: {
                 return d12Twelve;
                 break;
@@ -335,32 +315,28 @@ public class ImageObjects extends Activity {
 
     //D20 images
     public static Drawable D20Image(int i) {
-        Drawable d20One = R.id.d20_1;
-        Drawable d20Two = R.id.d20_2;
-        Drawable d20Three = R.id.d20_3;
-        Drawable d20Four = R.id.d20_4;
-        Drawable d20Five = R.id.d20_5;
-        Drawable d20Six = R.id.d20_6;
-        Drawable d20Seven = R.id.d20_7;
-        Drawable d20Eight = R.id.d20_8;
-        Drawable d20Nine = R.id.d20_9;
-        Drawable d20Ten = R.id.d20_10;
-        Drawable d20Eleven = R.id.d20_11;
-        Drawable d20Twelve = R.id.d20_12;
-        Drawable d20Thirteen = R.id.d20_13;
-        Drawable d20Fourteen = R.id.d20_14;
-        Drawable d20Fifteen = R.id.d20_15;
-        Drawable d20Sixteen = R.id.d20_16;
-        Drawable d20Seventeen = R.id.d20_17;
-        Drawable d20Eighteen = R.id.d20_18;
-        Drawable d20Nineteen = R.id.d20_19;
-        Drawable d20Twenty = R.id.d20_20;
+        Drawable d20One = io.getDrawable(R.drawable.d20_1);
+        Drawable d20Two = io.getDrawable(R.drawable.d20_2);
+        Drawable d20Three = io.getDrawable(R.drawable.d20_3);
+        Drawable d20Four = io.getDrawable(R.drawable.d20_4);
+        Drawable d20Five = io.getDrawable(R.drawable.d20_5);
+        Drawable d20Six = io.getDrawable(R.drawable.d20_6);
+        Drawable d20Seven = io.getDrawable(R.drawable.d20_7);
+        Drawable d20Eight = io.getDrawable(R.drawable.d20_8);
+        Drawable d20Nine = io.getDrawable(R.drawable.d20_9);
+        Drawable d20Ten = io.getDrawable(R.drawable.d20_10);
+        Drawable d20Eleven = io.getDrawable(R.drawable.d20_11);
+        Drawable d20Twelve = io.getDrawable(R.drawable.d20_12);
+        Drawable d20Thirteen = io.getDrawable(R.drawable.d20_13);
+        Drawable d20Fourteen = io.getDrawable(R.drawable.d20_14);
+        Drawable d20Fifteen = io.getDrawable(R.drawable.d20_15);
+        Drawable d20Sixteen = io.getDrawable(R.drawable.d20_16);
+        Drawable d20Seventeen = io.getDrawable(R.drawable.d20_17);
+        Drawable d20Eighteen = io.getDrawable(R.drawable.d20_18);
+        Drawable d20Nineteen = io.getDrawable(R.drawable.d20_19);
+        Drawable d20Twenty = io.getDrawable(R.drawable.d20_20);
 
         switch (i) {
-            case 21: {
-                return d20Animation;
-                break;
-            }
             case 20: {
                 return d20Twenty;
                 break;
