@@ -102,9 +102,9 @@ public class ImageObjects extends Application {
         } return null;
     }
 
-    /*
+
     //D6 images
-    public static Drawable D6Image(int i) {
+    /*public static Drawable D6Image(int i) {
         Drawable d6One = io.getDrawable(R.drawable.d6_1);
         Drawable d6Two = io.getDrawable(R.drawable.d6_2);
         Drawable d6Three = io.getDrawable(R.drawable.d6_3);
@@ -139,7 +139,9 @@ public class ImageObjects extends Application {
             }
         } return null;
     }
+
      */
+
 
     /*
     //D8 images
