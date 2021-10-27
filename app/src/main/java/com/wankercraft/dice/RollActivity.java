@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageButton;
@@ -16,16 +18,19 @@ import android.widget.TextView;
 
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class RollActivity extends Activity {
 
     //private TextView mTextView;
     private ActivityRollBinding binding;
-    int animationDelay = 6000; // default 1500
+    int animationDelay = 1500; // default 1500
     int numberSides = 0;
     int rollValue = 0;
     private boolean isRolling = false;
     ImageButton mRollButton;
+    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,44 +45,44 @@ public class RollActivity extends Activity {
 
         mRollButton = findViewById(R.id.rollButton);
         mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
-        mRollButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!isRolling) {
-                    isRolling = true; // We are now rolling the die
-                    rollDie();
-                    // Change button image to animation of die rolling
-                    // play sound of die rolling
-                    // PLay animation and wait x seconds for roll animation
-                    rollAnimation();
-                    // display die side corresponding to random number generated
-                    switch (numberSides) {
-                        case 4: {
-                            v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
-                            break;
-                        }
-                        case 6: {
-                            v.setBackground(D6Image(rollValue));
-                            break;
-                        }
-                        /*case 8: {
-                            v.setBackground(ImageObjects.D8Image(rollValue));
-                            break;
-                        }
-                        case 10: {
-                            v.setBackground(ImageObjects.D10Image(rollValue));
-                            break;
-                        }
-                        case 12: {
-                            v.setBackground(ImageObjects.D12Image(rollValue));
-                            break;
-                        }
-                        case 20: {
-                            v.setBackground(ImageObjects.D20Image(rollValue));
-                            break;
-                        }*/
+        mRollButton.setOnClickListener(v -> {
+            if(!isRolling) {
+                isRolling = true; // We are now rolling the die
+                // play sound of die rolling
+                // PLay animation and wait x seconds for roll animation
+                mRollButton.animate().rotation(mRollButton.getRotation() - 720).start();
+
+                rollDie();
+
+                // display die side corresponding to random number generated
+                switch (numberSides) {
+                    case 4: {
+                        v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
+                        isRolling = false;
+                        break;
                     }
-                } isRolling = false;
+                    case 6: {
+                        v.setBackground(D6Image(rollValue));
+                        isRolling = false;
+                        break;
+                    }
+                    /*case 8: {
+                        v.setBackground(ImageObjects.D8Image(rollValue));
+                        break;
+                    }
+                    case 10: {
+                        v.setBackground(ImageObjects.D10Image(rollValue));
+                        break;
+                    }
+                    case 12: {
+                        v.setBackground(ImageObjects.D12Image(rollValue));
+                        break;
+                    }
+                    case 20: {
+                        v.setBackground(ImageObjects.D20Image(rollValue));
+                        break;
+                    }*/
+                }
             }
         });
     }
