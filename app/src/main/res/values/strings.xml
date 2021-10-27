@@ -4,7 +4,17 @@
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="hello_world">Hello Square World!</string>
+    <string name="roll_title">Press Die to Roll</string>
     <string name="title_activity_roll">RollActivity</string>
     <string name="title_activity_roll_animation">RollAnimation</string>
+    <string name="title_activity_image_objects">ImageObjects</string>
+    <string name="select_sides">Select # of Sides!</string>
+    <string name="button_d4">D4</string>
+    <string name="button_d6">D6</string>
+    <string name="button_d8">D8</string>
+    <string name="button_d10">D10</string>
+    <string name="button_d12">D12</string>
+    <string name="button_d20">D20</string>
+    <string name="button_d100">D100</string>
+    <string name="roll_button">Roll Button</string>
 </resources>

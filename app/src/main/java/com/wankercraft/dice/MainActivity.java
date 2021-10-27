@@ -3,52 +3,49 @@ package com.wankercraft.dice;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 import android.view.View;
 import android.content.Intent;
-import android.view.View.OnClickListener;
 
 import com.wankercraft.dice.databinding.ActivityMainBinding;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
-    private TextView mTextView;
+    //private TextView mTextView;
     private ActivityMainBinding binding;
 
-    View v = new View(this);
+    //View v = new View(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Button mButtonD4= findViewById(R.id.button_d4);
-        mButtonD4.setOnClickListener((OnClickListener) this);
-        Button mButtonD6 = findViewById(R.id.button_d6);
-        mButtonD6.setOnClickListener((OnClickListener) this);
-        Button mButtonD8 = findViewById(R.id.button_d8);
-        mButtonD8.setOnClickListener((OnClickListener) this);
-        Button mButtonD10 = findViewById(R.id.button_d10);
-        mButtonD10.setOnClickListener((OnClickListener) this);
-        Button mButtonD12 = findViewById(R.id.button_d12);
-        mButtonD12.setOnClickListener((OnClickListener) this);
-        Button mButtonD20 = findViewById(R.id.button_d20);
-        mButtonD20.setOnClickListener((OnClickListener) this);
-        Button mButtonD100 = findViewById(R.id.button_d100);
-        mButtonD100.setOnClickListener((OnClickListener) this);
 
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mTextView = binding.sidesMainmenu;
-
-        onClick();
+        //mTextView = binding.sidesMainmenu;
+        Button mButtonD4= findViewById(R.id.button_d4);
+        mButtonD4.setOnClickListener(this);
+        Button mButtonD6 = findViewById(R.id.button_d6);
+        mButtonD6.setOnClickListener(this);
+        Button mButtonD8 = findViewById(R.id.button_d8);
+        mButtonD8.setOnClickListener(this);
+        Button mButtonD10 = findViewById(R.id.button_d10);
+        mButtonD10.setOnClickListener(this);
+        Button mButtonD12 = findViewById(R.id.button_d12);
+        mButtonD12.setOnClickListener(this);
+        Button mButtonD20 = findViewById(R.id.button_d20);
+        mButtonD20.setOnClickListener(this);
+        Button mButtonD100 = findViewById(R.id.button_d100);
+        mButtonD100.setOnClickListener(this);
 
     }
 
 
 
-    private void onClick() {
+    public void onClick(View v) {
+
 
         Intent intent = new Intent(getApplicationContext(), RollActivity.class);
 

@@ -15,18 +15,18 @@
         app:layout_boxedEdges="all">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/roll_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:text="@string/hello_world" />
+            android:text="@string/roll_title" />
 
         <ImageButton
             android:id="@+id/rollButton"
             android:layout_width="82dp"
             android:layout_height="80dp"
             android:layout_gravity="center|center"
-            android:src="@android:drawable/ic_menu_mylocation" />
+            android:contentDescription="@string/roll_button"/>
 
     </FrameLayout>
 </androidx.wear.widget.BoxInsetLayout>

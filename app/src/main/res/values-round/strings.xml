@@ -8,4 +8,5 @@
     <string name="button_d20">D20</string>
     <string name="button_d100">D100</string>
     <string name="hello_world">Hello Round World!</string>
+    <string name="roll_button">Roll Button</string>
 </resources>

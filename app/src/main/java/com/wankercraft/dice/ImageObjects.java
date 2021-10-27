@@ -5,25 +5,24 @@ import android.app.Application;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.contentcapture.DataShareWriteAdapter;
-
 import androidx.core.content.res.ResourcesCompat;
 
 
-public class ImageObjects extends Activity {
+public class ImageObjects extends Application {
 
    static ImageObjects io = new ImageObjects();
 
     // Background image after die selection
     public static Drawable DefaultBG(int i) {
-        Drawable d4BG = io.getDrawable(R.drawable.d4_4);
-        Drawable d6BG = io.getDrawable(R.drawable.d6_6);
+        //Drawable d4BG =io.getDrawable(R.drawable.d4_4);
+        /*Drawable d6BG = io.getDrawable(R.drawable.d6_6);
         Drawable d8BG = io.getDrawable(R.drawable.d8_8);
         Drawable d10BG = io.getDrawable(R.drawable.d10_10);
         Drawable d12BG = io.getDrawable(R.drawable.d12_12);
         Drawable d20BG = io.getDrawable(R.drawable.d20_20);
-
+        */
         switch (i) {
-            case 20: {
+            /* case 20: {
                 return d20BG;
             }
             case 12: {
@@ -37,15 +36,15 @@ public class ImageObjects extends Activity {
             }
             case 6: {
                 return d6BG;
-            }
+            } */
             case 4: {
-                return d4BG;
+                return io.getDrawable(R.drawable.d4_4);
             }
         } return null;
     }
 
     //Animation to play while rolling
-    public static Drawable Animation(int i) {
+    /*public static Drawable Animation(int i) {
         Drawable d4Animation = io.getDrawable(R.drawable.d4_anim);
         Drawable d6Animation = io.getDrawable(R.drawable.d6_anim);
         Drawable d8Animation= io.getDrawable(R.drawable.d8_anim);
@@ -75,6 +74,8 @@ public class ImageObjects extends Activity {
         } return null;
     }
 
+     */
+
     // D4 images
     public static Drawable D4Image(int i) {
         //Instance of this class to call non static method
@@ -88,23 +89,20 @@ public class ImageObjects extends Activity {
         switch (i) {
             case 4: {
                 return d4Four;
-                break;
             }
             case 3: {
                 return d4Three;
-                break;
             }
             case 2: {
                 return d4Two;
-                break;
             }
             case 1: {
                 return d4One;
-                break;
             }
         } return null;
     }
 
+    /*
     //D6 images
     public static Drawable D6Image(int i) {
         Drawable d6One = io.getDrawable(R.drawable.d6_1);
@@ -141,14 +139,16 @@ public class ImageObjects extends Activity {
             }
         } return null;
     }
+     */
 
+    /*
     //D8 images
     public static Drawable D8Image(int i) {
         Drawable d8One = io.getDrawable(R.drawable.d8_1);
         Drawable d8Two = io.getDrawable(R.drawable.d8_2);
         Drawable d8Three = io.getDrawable(R.drawable.d8_3);
         Drawable d8Four = io.getDrawable(R.drawable.d8_4);
-        Drawable d8Five = io.getDrawable(R.drawable.d8_50;
+        Drawable d8Five = io.getDrawable(R.drawable.d8_50);
         Drawable d8Six = io.getDrawable(R.drawable.d8_6);
         Drawable d8Seven = io.getDrawable(R.drawable.d8_7);
         Drawable d8Eight = io.getDrawable(R.drawable.d8_8);
@@ -420,9 +420,7 @@ public class ImageObjects extends Activity {
         } return null;
     }
 
+
+     */
     //d100 images yeeeesh
-
-
-
-
 }
