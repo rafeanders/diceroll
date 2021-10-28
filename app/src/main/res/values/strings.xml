@@ -1,13 +1,7 @@
 <resources>
     <string name="app_name">Dice</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
     <string name="roll_title">Press Die to Roll</string>
     <string name="title_activity_roll">RollActivity</string>
-    <string name="title_activity_roll_animation">RollAnimation</string>
-    <string name="title_activity_image_objects">ImageObjects</string>
     <string name="select_sides">Select # of Sides!</string>
     <string name="button_d4">D4</string>
     <string name="button_d6">D6</string>

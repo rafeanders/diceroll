@@ -35,23 +35,11 @@
             </intent-filter>
         </activity>
 
-        <!-- <activity
-            android:name=".RollAnimation"
-            android:exported="false"
-            android:label="@string/title_activity_roll_animation" >
-        </activity> -->
-
         <activity
             android:name=".RollActivity"
             android:exported="false"
             android:label="@string/title_activity_roll" >
         </activity>
-
-        <!--<activity
-            android:name=".ImageObjects"
-            android:exported="false"
-            android:label="@string/title_activity_image_objects" >
-        </activity> -->
     </application>
 
 </manifest>
