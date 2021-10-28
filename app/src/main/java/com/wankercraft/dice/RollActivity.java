@@ -1,59 +1,40 @@
 package com.wankercraft.dice;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class RollActivity extends Activity {
 
-    //private TextView mTextView;
-    private ActivityRollBinding binding;
-    int animationDelay = 1500; // default 1500
     int numberSides = 0;
     int rollValue = 0;
     private boolean isRolling = false;
     ImageButton mRollButton;
-    Timer timer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityRollBinding.inflate(getLayoutInflater());
+        com.wankercraft.dice.databinding.ActivityRollBinding binding = ActivityRollBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        //mTextView = binding.text;
 
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0);
 
-        mRollButton = findViewById(R.id.rollButton);
+        mRollButton = findViewById(R.id.rollButton); //Roll button object reference
         mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
-        mRollButton.setOnClickListener(v -> {
+        mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die
                 // play sound of die rolling
-                // PLay animation and wait x seconds for roll animation
+                // Play animation
                 mRollButton.animate().rotation(mRollButton.getRotation() - 720).start();
-
+                // Figure out a way to delay x seconds before doing the roll and changing the image to the result
                 rollDie();
-
                 // display die side corresponding to random number generated
                 switch (numberSides) {
                     case 4: {
@@ -67,7 +48,7 @@ public class RollActivity extends Activity {
                         break;
                     }
                     /*case 8: {
-                        v.setBackground(ImageObjects.D8Image(rollValue));
+                        v.setBackground(D8Image(rollValue));
                         break;
                     }
                     case 10: {
@@ -91,39 +72,16 @@ public class RollActivity extends Activity {
     private void rollDie() {
         Random r = new Random();
         rollValue = r.nextInt((numberSides - 1) + 1) + 1;
-        //return rollValue;
-    }
-
-    private void rollAnimation() {
-        // get image resource assign to variable roll button
-        mRollButton = findViewById(R.id.rollButton);
-        // Not my code. Thanks stackoverflow.
-        ObjectAnimator anim = ObjectAnimator.ofFloat(mRollButton, "rotationY", 5.0f);
-        //duration
-        anim.setDuration(animationDelay);
-        //repeatability
-        anim.setRepeatCount(1);
-        //set interpolator
-        anim.setInterpolator(new AccelerateDecelerateInterpolator());
-        //listener for animation end
-        anim.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-            }
-        });
-        //start anim
-        anim.start();
     }
 
     private Drawable DefaultBG(int i) {
         Drawable d4BG =getDrawable(R.drawable.d4_4);
         Drawable d6BG = getDrawable(R.drawable.d6_6);
-        /*Drawable d8BG = io.getDrawable(R.drawable.d8_8);
-        Drawable d10BG = io.getDrawable(R.drawable.d10_10);
-        Drawable d12BG = io.getDrawable(R.drawable.d12_12);
-        Drawable d20BG = io.getDrawable(R.drawable.d20_20);
-        */
+        //Drawable d8BG = io.getDrawable(R.drawable.d8_8);
+        //Drawable d10BG = io.getDrawable(R.drawable.d10_10);
+        //Drawable d12BG = io.getDrawable(R.drawable.d12_12);
+        //Drawable d20BG = io.getDrawable(R.drawable.d20_20);
+
         switch (i) {
             /* case 20: {
                 return d20BG;
@@ -147,9 +105,6 @@ public class RollActivity extends Activity {
     }
 
     private Drawable D4Image(int i) {
-        //Instance of this class to call non static method
-
-
         Drawable d4One = getDrawable(R.drawable.d4_1);
         Drawable d4Two = getDrawable(R.drawable.d4_2);
         Drawable d4Three = getDrawable(R.drawable.d4_3);
@@ -200,5 +155,288 @@ public class RollActivity extends Activity {
             }
         } return null;
     }
+
+    /*
+    //D8 images
+    public static Drawable D8Image(int i) {
+        Drawable d8One = io.getDrawable(R.drawable.d8_1);
+        Drawable d8Two = io.getDrawable(R.drawable.d8_2);
+        Drawable d8Three = io.getDrawable(R.drawable.d8_3);
+        Drawable d8Four = io.getDrawable(R.drawable.d8_4);
+        Drawable d8Five = io.getDrawable(R.drawable.d8_50);
+        Drawable d8Six = io.getDrawable(R.drawable.d8_6);
+        Drawable d8Seven = io.getDrawable(R.drawable.d8_7);
+        Drawable d8Eight = io.getDrawable(R.drawable.d8_8);
+
+        switch (i) {
+            case 8: {
+                return d8Eight;
+                break;
+            }
+            case 7: {
+                return d8Seven;
+                break;
+            }
+            case 6: {
+                return d8Six;
+                break;
+            }
+            case 5: {
+                return d8Five;
+                break;
+            }
+            case 4: {
+                return d8Four;
+                break;
+            }
+            case 3: {
+                return d8Three;
+                break;
+            }
+            case 2: {
+                return d8Two;
+                break;
+            }
+            case 1: {
+                return d8One;
+                break;
+            }
+        } return null;
+    }
+
+    //D10 images
+    public static Drawable D10Image(int i) {
+        Drawable d10One = io.getDrawable(R.drawable.d10_1);
+        Drawable d10Two = io.getDrawable(R.drawable.d10_2);
+        Drawable d10Three = io.getDrawable(R.drawable.d10_3);
+        Drawable d10Four = io.getDrawable(R.drawable.d10_4);
+        Drawable d10Five = io.getDrawable(R.drawable.d10_5);
+        Drawable d10Six = io.getDrawable(R.drawable.d10_6);
+        Drawable d10Seven = io.getDrawable(R.drawable.d10_7);
+        Drawable d10Eight = io.getDrawable(R.drawable.d10_8);
+        Drawable d10Nine = io.getDrawable(R.drawable.d10_9);
+        Drawable d10Ten = io.getDrawable(R.drawable.d10_10);
+
+        switch (i) {
+            case 10: {
+                return d10Ten;
+                break;
+            }
+            case 9: {
+                return d10Nine;
+                break;
+            }
+            case 8: {
+                return d10Eight;
+                break;
+            }
+            case 7: {
+                return d10Seven;
+                break;
+            }
+            case 6: {
+                return d10Six;
+                break;
+            }
+            case 5: {
+                return d10Five;
+                break;
+            }
+            case 4: {
+                return d10Four;
+                break;
+            }
+            case 3: {
+                return d10Three;
+                break;
+            }
+            case 2: {
+                return d10Two;
+                break;
+            }
+            case 1: {
+                return d10One;
+                break;
+            }
+        } return null;
+    }
+
+    //D12 images
+    public static Drawable D12Image(int i) {
+        Drawable d12One = io.getDrawable(R.drawable.d12_1);
+        Drawable d12Two = io.getDrawable(R.drawable.d12_2);
+        Drawable d12Three = io.getDrawable(R.drawable.d12_3);
+        Drawable d12Four = io.getDrawable(R.drawable.d12_4);
+        Drawable d12Five = io.getDrawable(R.drawable.d12_5);
+        Drawable d12Six = io.getDrawable(R.drawable.d12_6);
+        Drawable d12Seven = io.getDrawable(R.drawable.d12_7);
+        Drawable d12Eight = io.getDrawable(R.drawable.d12_8);
+        Drawable d12Nine = io.getDrawable(R.drawable.d12_9);
+        Drawable d12Ten = io.getDrawable(R.drawable.d12_10);
+        Drawable d12Eleven = io.getDrawable(R.drawable.d12_11);
+        Drawable d12Twelve = io.getDrawable(R.drawable.d12_12);
+
+        switch (i) {
+            case 12: {
+                return d12Twelve;
+                break;
+            }
+            case 11: {
+                return d12Eleven;
+                break;
+            }
+            case 10: {
+                return d12Ten;
+                break;
+            }
+            case 9: {
+                return d12Nine;
+                break;
+            }
+            case 8: {
+                return d12Eight;
+                break;
+            }
+            case 7: {
+                return d12Seven;
+                break;
+            }
+            case 6: {
+                return d12Six;
+                break;
+            }
+            case 5: {
+                return d12Five;
+                break;
+            }
+            case 4: {
+                return d12Four;
+                break;
+            }
+            case 3: {
+                return d12Three;
+                break;
+            }
+            case 2: {
+                return d12Two;
+                break;
+            }
+            case 1: {
+                return d12One;
+                break;
+            }
+        } return null;
+    }
+
+    //D20 images
+    public static Drawable D20Image(int i) {
+        Drawable d20One = io.getDrawable(R.drawable.d20_1);
+        Drawable d20Two = io.getDrawable(R.drawable.d20_2);
+        Drawable d20Three = io.getDrawable(R.drawable.d20_3);
+        Drawable d20Four = io.getDrawable(R.drawable.d20_4);
+        Drawable d20Five = io.getDrawable(R.drawable.d20_5);
+        Drawable d20Six = io.getDrawable(R.drawable.d20_6);
+        Drawable d20Seven = io.getDrawable(R.drawable.d20_7);
+        Drawable d20Eight = io.getDrawable(R.drawable.d20_8);
+        Drawable d20Nine = io.getDrawable(R.drawable.d20_9);
+        Drawable d20Ten = io.getDrawable(R.drawable.d20_10);
+        Drawable d20Eleven = io.getDrawable(R.drawable.d20_11);
+        Drawable d20Twelve = io.getDrawable(R.drawable.d20_12);
+        Drawable d20Thirteen = io.getDrawable(R.drawable.d20_13);
+        Drawable d20Fourteen = io.getDrawable(R.drawable.d20_14);
+        Drawable d20Fifteen = io.getDrawable(R.drawable.d20_15);
+        Drawable d20Sixteen = io.getDrawable(R.drawable.d20_16);
+        Drawable d20Seventeen = io.getDrawable(R.drawable.d20_17);
+        Drawable d20Eighteen = io.getDrawable(R.drawable.d20_18);
+        Drawable d20Nineteen = io.getDrawable(R.drawable.d20_19);
+        Drawable d20Twenty = io.getDrawable(R.drawable.d20_20);
+
+        switch (i) {
+            case 20: {
+                return d20Twenty;
+                break;
+            }
+            case 19: {
+                return d20Nineteen;
+                break;
+            }
+            case 18: {
+                return d20Eighteen;
+                break;
+            }
+            case 17: {
+                return d20Seventeen;
+                break;
+            }
+            case 16: {
+                return d20Sixteen;
+                break;
+            }
+            case 15: {
+                return d20Fifteen;
+                break;
+            }
+            case 14: {
+                return d20Fourteen;
+                break;
+            }
+            case 13: {
+                return d20Thirteen;
+                break;
+            }
+            case 12: {
+                return d20Twelve;
+                break;
+            }
+            case 11: {
+                return d20Eleven;
+                break;
+            }
+            case 10: {
+                return d20Ten;
+                break;
+            }
+            case 9: {
+                return d20Nine;
+                break;
+            }
+            case 8: {
+                return d20Eight;
+                break;
+            }
+            case 7: {
+                return d20Seven;
+                break;
+            }
+            case 6: {
+                return d20Six;
+                break;
+            }
+            case 5: {
+                return d20Five;
+                break;
+            }
+            case 4: {
+                return d20Four;
+                break;
+            }
+            case 3: {
+                return d20Three;
+                break;
+            }
+            case 2: {
+                return d20Two;
+                break;
+            }
+            case 1: {
+                return d20One;
+                break;
+            }
+        } return null;
+    }
+
+
+     */
+    //d100 images yeeeesh
 
 }
