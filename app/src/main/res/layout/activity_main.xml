@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/box_inset_layout_padding"
+    android:background="@drawable/background"
     tools:context=".MainActivity"
     tools:deviceIds="wear">
 
@@ -19,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
+            android:fontFamily="@font/uncial_antiqua"
             android:text="@string/select_sides" />
 
         <ScrollView
@@ -35,36 +37,56 @@
                     android:id="@+id/button_d4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d4" />
+
                 <Button
                     android:id="@+id/button_d6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d6" />
+
                 <Button
                     android:id="@+id/button_d8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d8" />
+
                 <Button
                     android:id="@+id/button_d10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d10" />
+
                 <Button
                     android:id="@+id/button_d12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d12" />
+
                 <Button
                     android:id="@+id/button_d20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d20" />
+
                 <Button
                     android:id="@+id/button_d100"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d100" />
             </LinearLayout>
         </ScrollView>
