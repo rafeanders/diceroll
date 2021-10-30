@@ -1,11 +1,15 @@
 package com.wankercraft.dice;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import com.wankercraft.dice.databinding.ActivityRollBinding;
+
 import java.util.Random;
 
 public class RollActivity extends Activity {
@@ -14,6 +18,10 @@ public class RollActivity extends Activity {
     int rollValue = 0;
     private boolean isRolling = false;
     ImageButton mRollButton;
+
+    private AudioAttributes aa;
+    private SoundPool soundPool;
+    final private int[] sound = new int[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +33,27 @@ public class RollActivity extends Activity {
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0);
 
+        aa = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(1)
+                .setAudioAttributes(aa)
+                .build();
+
+        sound[0] = SoundPool.load(this, R.raw.roll, 1);
+        sound[1] = SoundPool.load(this, R.raw.roll2, 1);
+        sound[2] = SoundPool.load(this, R.raw.roll3, 1);
+
         mRollButton = findViewById(R.id.rollButton); //Roll button object reference
         mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
         mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die
                 // play sound of die rolling
+                rollSound(this);
                 // Play animation
                 mRollButton.animate().rotation(mRollButton.getRotation() - 720).start();
                 // Figure out a way to delay x seconds before doing the roll and changing the image to the result
@@ -72,6 +95,26 @@ public class RollActivity extends Activity {
     private void rollDie() {
         Random r = new Random();
         rollValue = r.nextInt((numberSides - 1) + 1) + 1;
+    }
+
+    public void rollSound(Context context) {
+        Random r = new Random();
+        int rn = r.nextInt(3);
+
+        switch (rn) {
+            case 0:
+                this.SoundPool.play(sound[0], 1, 1, 1, 0, 1f);
+                break;
+            case 1:
+                SoundPool.play(sound[1], 1, 1, 1, 0, 1f);
+                break;
+            case 2:
+                SoundPool.play(sound[2], 1, 1, 1, 0, 1f);
+                break;
+        }
+
+
+
     }
 
     private Drawable DefaultBG(int i) {
