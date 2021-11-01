@@ -19,9 +19,9 @@ public class RollActivity extends Activity {
     private boolean isRolling = false;
     ImageButton mRollButton;
 
-    private AudioAttributes aa;
     private SoundPool soundPool;
     final private int[] sound = new int[3];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +33,8 @@ public class RollActivity extends Activity {
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0);
 
-        aa = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build();
-
-        soundPool = new SoundPool.Builder()
-                .setMaxStreams(1)
-                .setAudioAttributes(aa)
-                .build();
-
-        sound[0] = SoundPool.load(this, R.raw.roll, 1);
-        sound[1] = SoundPool.load(this, R.raw.roll2, 1);
-        sound[2] = SoundPool.load(this, R.raw.roll3, 1);
+        // Initialiaze audio constructor
+        intiSound();
 
         mRollButton = findViewById(R.id.rollButton); //Roll button object reference
         mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
@@ -53,7 +42,7 @@ public class RollActivity extends Activity {
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die
                 // play sound of die rolling
-                rollSound(this);
+                rollSound();
                 // Play animation
                 mRollButton.animate().rotation(mRollButton.getRotation() - 720).start();
                 // Figure out a way to delay x seconds before doing the roll and changing the image to the result
@@ -97,24 +86,38 @@ public class RollActivity extends Activity {
         rollValue = r.nextInt((numberSides - 1) + 1) + 1;
     }
 
-    public void rollSound(Context context) {
+    private void intiSound() {
+        AudioAttributes aa = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(1)
+                .setAudioAttributes(aa)
+                .build();
+
+        sound[0] = soundPool.load(this, R.raw.roll, 1);
+        sound[1] = soundPool.load(this, R.raw.roll2, 1);
+        sound[2] = soundPool.load(this, R.raw.roll3, 1);
+    }
+
+
+    public void rollSound() {
         Random r = new Random();
         int rn = r.nextInt(3);
 
         switch (rn) {
             case 0:
-                this.SoundPool.play(sound[0], 1, 1, 1, 0, 1f);
+                soundPool.play(sound[0], 1, 1, 1, 0, 1f);
                 break;
             case 1:
-                SoundPool.play(sound[1], 1, 1, 1, 0, 1f);
+                soundPool.play(sound[1], 1, 1, 1, 0, 1f);
                 break;
             case 2:
-                SoundPool.play(sound[2], 1, 1, 1, 0, 1f);
+                soundPool.play(sound[2], 1, 1, 1, 0, 1f);
                 break;
         }
-
-
-
     }
 
     private Drawable DefaultBG(int i) {
