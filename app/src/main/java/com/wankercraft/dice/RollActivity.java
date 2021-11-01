@@ -88,7 +88,8 @@ public class RollActivity extends Activity {
 
     private void intiSound() {
         AudioAttributes aa = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION) //docs recommend .USAGE_MEDIA or USAGE.GAME unless alarm clock
+                .setUsage(AudioAttributes.USAGE_GAME)
+                //.setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION) //docs recommend .USAGE_MEDIA or USAGE.GAME unless alarm clock
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                 .build();
 
