@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".RollActivity"
     tools:deviceIds="wear">
@@ -20,7 +19,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
-            android:fontFamily="@font/uncial_antiqua"
             android:text="@string/roll_title" />
 
         <ImageButton

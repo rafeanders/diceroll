@@ -1,6 +1,7 @@
 package com.wankercraft.dice;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
@@ -8,6 +9,7 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import com.wankercraft.dice.databinding.ActivityRollBinding;
+
 import java.util.Random;
 
 public class RollActivity extends Activity {
