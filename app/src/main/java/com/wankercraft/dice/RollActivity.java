@@ -14,13 +14,13 @@ import java.util.Random;
 
 public class RollActivity extends Activity {
 
-    int numberSides = 0;
-    int rollValue = 0;
-    private boolean isRolling = false;
+    int numberSides = 0; // Variable for number of sides selected by the user
+    int rollValue = 0; // Variable for value of the roll
+    private boolean isRolling = false; // Variable for whether we are rolling or not
     ImageButton mRollButton;
 
-    private SoundPool soundPool;
-    final private int[] sound = new int[3];
+    private SoundPool soundPool; // Creating Sound container
+    final private int[] sound = new int[3]; // Variable for array of sound files
 
 
     @Override
@@ -31,7 +31,7 @@ public class RollActivity extends Activity {
         setContentView(binding.getRoot());
 
         Intent intent = getIntent();
-        numberSides = intent.getIntExtra("key", 0);
+        numberSides = intent.getIntExtra("key", 0); // load number of sides into variable
 
         // Initialiaze audio constructor
         intiSound();
@@ -51,7 +51,7 @@ public class RollActivity extends Activity {
                 switch (numberSides) {
                     case 4: {
                         v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
-                        isRolling = false;
+                        isRolling = false; // We are done rolling
                         break;
                     }
                     case 6: {
@@ -59,11 +59,12 @@ public class RollActivity extends Activity {
                         isRolling = false;
                         break;
                     }
-                    /*case 8: {
+                    case 8: {
                         v.setBackground(D8Image(rollValue));
+                        isRolling = false;
                         break;
                     }
-                    case 10: {
+                    /*case 10: {
                         v.setBackground(ImageObjects.D10Image(rollValue));
                         break;
                     }
@@ -86,6 +87,7 @@ public class RollActivity extends Activity {
         rollValue = r.nextInt((numberSides - 1) + 1) + 1;
     }
 
+    // Initialize sound manager and load sounds into array
     private void intiSound() {
         AudioAttributes aa = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
@@ -104,6 +106,7 @@ public class RollActivity extends Activity {
     }
 
 
+    // Play random rolling sound when called
     public void rollSound() {
         Random r = new Random();
         int rn = r.nextInt(3);
@@ -121,14 +124,18 @@ public class RollActivity extends Activity {
         }
     }
 
+    // This method provides the drawable reference for the initial image on the roll screen based
+    // on user input.
     private Drawable DefaultBG(int i) {
-        Drawable d4BG =getDrawable(R.drawable.d4_4);
+        //Drawable references to image assets
+        Drawable d4BG = getDrawable(R.drawable.d4_4);
         Drawable d6BG = getDrawable(R.drawable.d6_6);
-        //Drawable d8BG = io.getDrawable(R.drawable.d8_8);
+        Drawable d8BG = getDrawable(R.drawable.d8_8);
         //Drawable d10BG = io.getDrawable(R.drawable.d10_10);
         //Drawable d12BG = io.getDrawable(R.drawable.d12_12);
         //Drawable d20BG = io.getDrawable(R.drawable.d20_20);
 
+        // Logic to return correct image based which number sided die the user selected.
         switch (i) {
             /* case 20: {
                 return d20BG;
@@ -138,10 +145,10 @@ public class RollActivity extends Activity {
             }
             case 10: {
                 return d10BG;
-            }
+            }*/
             case 8: {
                 return d8BG;
-            }*/
+            }
             case 6: {
                 return d6BG;
             }
@@ -203,54 +210,46 @@ public class RollActivity extends Activity {
         } return null;
     }
 
-    /*
+
     //D8 images
-    public static Drawable D8Image(int i) {
-        Drawable d8One = io.getDrawable(R.drawable.d8_1);
-        Drawable d8Two = io.getDrawable(R.drawable.d8_2);
-        Drawable d8Three = io.getDrawable(R.drawable.d8_3);
-        Drawable d8Four = io.getDrawable(R.drawable.d8_4);
-        Drawable d8Five = io.getDrawable(R.drawable.d8_50);
-        Drawable d8Six = io.getDrawable(R.drawable.d8_6);
-        Drawable d8Seven = io.getDrawable(R.drawable.d8_7);
-        Drawable d8Eight = io.getDrawable(R.drawable.d8_8);
+    public Drawable D8Image(int i) {
+        Drawable d8One = getDrawable(R.drawable.d8_1);
+        Drawable d8Two = getDrawable(R.drawable.d8_2);
+        Drawable d8Three = getDrawable(R.drawable.d8_3);
+        Drawable d8Four = getDrawable(R.drawable.d8_4);
+        Drawable d8Five = getDrawable(R.drawable.d8_5);
+        Drawable d8Six = getDrawable(R.drawable.d8_6);
+        Drawable d8Seven = getDrawable(R.drawable.d8_7);
+        Drawable d8Eight = getDrawable(R.drawable.d8_8);
 
         switch (i) {
             case 8: {
                 return d8Eight;
-                break;
             }
             case 7: {
                 return d8Seven;
-                break;
             }
             case 6: {
                 return d8Six;
-                break;
             }
             case 5: {
                 return d8Five;
-                break;
             }
             case 4: {
                 return d8Four;
-                break;
             }
             case 3: {
                 return d8Three;
-                break;
             }
             case 2: {
                 return d8Two;
-                break;
             }
             case 1: {
                 return d8One;
-                break;
             }
         } return null;
     }
-
+    /*
     //D10 images
     public static Drawable D10Image(int i) {
         Drawable d10One = io.getDrawable(R.drawable.d10_1);
