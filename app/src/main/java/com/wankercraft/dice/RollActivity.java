@@ -7,6 +7,8 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 
 import java.util.Random;
@@ -22,7 +24,7 @@ public class RollActivity extends Activity {
     int rollsTotal = 0; // Variable for Total for all rolls this session
     private boolean isRolling = false; // Variable for whether we are rolling or not
     ImageButton mRollButton;
-
+    TextView mRollsTotal;
     private SoundPool soundPool; // Creating Sound container
     final private int[] sound = new int[3]; // Variable for array of sound files
 
@@ -37,6 +39,8 @@ public class RollActivity extends Activity {
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0); // load number of sides into variable
 
+        mRollsTotal = findViewById(R.id.totalallrolls);
+        mRollsTotal.setText(String.valueOf(rollsTotal));
         // Initialiaze audio constructor
         intiSound();
 
@@ -81,10 +85,15 @@ public class RollActivity extends Activity {
                         break;
                     }*/
                 }
-                rollsTotal += rollValue;
-                // update rolls total display
+                updateTotal(); // Update total
             }
         });
+    }
+
+    //Increment total tally for all rolls, and update textview
+    private void updateTotal() {
+        rollsTotal += rollValue;
+        mRollsTotal.setText(String.valueOf(rollsTotal));
     }
 
     // This method "roll" the die, returns a random int in the range of the selected die
