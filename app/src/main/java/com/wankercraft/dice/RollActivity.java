@@ -13,15 +13,13 @@ import java.util.Random;
 
 
 // TO-DO:
-// Add variable for number of die to roll
-// add buttons programmatically, default loadin is 1 button center|center aligned
-// 2 buttons below title "press to roll", + and - button with text ~"Number of Die"
-// add and remove die displayed based on button pressed. arrange however. likely 2 mid, 2 top 1 bot, 2 top 2 bot etc...
+// Calculate total for all rolls this session. Possible include reset button
 
 public class RollActivity extends Activity {
 
     int numberSides = 0; // Variable for number of sides selected by the user
     int rollValue = 0; // Variable for value of the roll
+    int rollsTotal = 0; // Variable for Total for all rolls this session
     private boolean isRolling = false; // Variable for whether we are rolling or not
     ImageButton mRollButton;
 
@@ -83,6 +81,8 @@ public class RollActivity extends Activity {
                         break;
                     }*/
                 }
+                rollsTotal += rollValue;
+                // update rolls total display
             }
         });
     }
