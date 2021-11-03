@@ -19,7 +19,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(binding.getRoot());
 
         //Button objects and listener declarations
-        Button mButtonD4= findViewById(R.id.button_d4);
+        Button mButtonD4 = findViewById(R.id.button_d4);
         mButtonD4.setOnClickListener(this);
         Button mButtonD6 = findViewById(R.id.button_d6);
         mButtonD6.setOnClickListener(this);

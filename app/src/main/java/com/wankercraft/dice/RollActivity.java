@@ -1,7 +1,6 @@
 package com.wankercraft.dice;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
@@ -11,6 +10,13 @@ import android.widget.ImageButton;
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 
 import java.util.Random;
+
+
+// TO-DO:
+// Add variable for number of die to roll
+// add buttons programmatically, default loadin is 1 button center|center aligned
+// 2 buttons below title "press to roll", + and - button with text ~"Number of Die"
+// add and remove die displayed based on button pressed. arrange however. likely 2 mid, 2 top 1 bot, 2 top 2 bot etc...
 
 public class RollActivity extends Activity {
 
