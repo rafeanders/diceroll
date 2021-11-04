@@ -75,10 +75,12 @@ public class RollActivity extends Activity {
                     }
                     case 10: {
                         v.setBackground(D10Image(rollValue));
+                        isRolling = false;
                         break;
                     }
                     case 12: {
                         v.setBackground(D12Image(rollValue));
+                        isRolling = false;
                         break;
                     }
                     case 20: {
@@ -90,6 +92,7 @@ public class RollActivity extends Activity {
                         } else {
                             mRollsTotal.setTextColor(Color.WHITE);
                         }
+                        isRolling = false;
                         break;
                     }
                 }

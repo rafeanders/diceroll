@@ -75,12 +75,12 @@
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d20" />
 
-                <Button
+                <!-- <Button
                     android:id="@+id/button_d100"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/uncial_antiqua"
-                    android:text="@string/button_d100" />
+                    android:text="@string/button_d100" /> -->
             </LinearLayout>
         </ScrollView>
 
