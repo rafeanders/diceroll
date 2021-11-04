@@ -7,24 +7,24 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 
 import java.util.Random;
 
 
 // TO-DO:
-// Add variable for number of die to roll
-// add buttons programmatically, default loadin is 1 button center|center aligned
-// 2 buttons below title "press to roll", + and - button with text ~"Number of Die"
-// add and remove die displayed based on button pressed. arrange however. likely 2 mid, 2 top 1 bot, 2 top 2 bot etc...
+// Calculate total for all rolls this session. Possible include reset button
 
 public class RollActivity extends Activity {
 
     int numberSides = 0; // Variable for number of sides selected by the user
     int rollValue = 0; // Variable for value of the roll
+    int rollsTotal = 0; // Variable for Total for all rolls this session
     private boolean isRolling = false; // Variable for whether we are rolling or not
     ImageButton mRollButton;
-
+    TextView mRollsTotal;
     private SoundPool soundPool; // Creating Sound container
     final private int[] sound = new int[3]; // Variable for array of sound files
 
@@ -39,6 +39,8 @@ public class RollActivity extends Activity {
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0); // load number of sides into variable
 
+        mRollsTotal = findViewById(R.id.totalallrolls);
+        mRollsTotal.setText(String.valueOf(rollsTotal));
         // Initialiaze audio constructor
         intiSound();
 
@@ -83,8 +85,15 @@ public class RollActivity extends Activity {
                         break;
                     }
                 }
+                updateTotal(); // Update total
             }
         });
+    }
+
+    //Increment total tally for all rolls, and update textview
+    private void updateTotal() {
+        rollsTotal += rollValue;
+        mRollsTotal.setText(String.valueOf(rollsTotal));
     }
 
     // This method "roll" the die, returns a random int in the range of the selected die
@@ -97,7 +106,6 @@ public class RollActivity extends Activity {
     private void intiSound() {
         AudioAttributes aa = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_GAME)
-                //.setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION) //docs recommend .USAGE_MEDIA or USAGE.GAME unless alarm clock
                 .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                 .build();
 
