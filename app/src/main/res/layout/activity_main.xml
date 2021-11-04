@@ -11,7 +11,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="175dp"
         android:padding="@dimen/inner_frame_layout_padding"
         app:layout_boxedEdges="all">
 
