@@ -31,8 +31,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mButtonD12.setOnClickListener(this);
         Button mButtonD20 = findViewById(R.id.button_d20);
         mButtonD20.setOnClickListener(this);
-        Button mButtonD100 = findViewById(R.id.button_d100);
-        mButtonD100.setOnClickListener(this);
+        //Button mButtonD100 = findViewById(R.id.button_d100);
+        //mButtonD100.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -76,12 +76,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             }
-            case R.id.button_d100: {
-                // Open roll activity push value of "100" to roll activity intent
-                intent.putExtra("key", 100);
-                startActivity(intent);
-                break;
-            }
+            //case R.id.button_d100: {
+            //    // Open roll activity push value of "100" to roll activity intent
+            //    intent.putExtra("key", 100);
+            //    startActivity(intent);
+            //    break;
+            //}
         }
     }
 }
