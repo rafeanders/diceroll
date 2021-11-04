@@ -11,7 +11,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="185dp"
         android:padding="@dimen/inner_frame_layout_padding"
         app:layout_boxedEdges="all">
 
@@ -31,12 +31,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/button_d4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d4" />
 
@@ -44,6 +45,7 @@
                     android:id="@+id/button_d6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d6" />
 
@@ -51,6 +53,7 @@
                     android:id="@+id/button_d8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d8" />
 
@@ -58,6 +61,7 @@
                     android:id="@+id/button_d10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d10" />
 
@@ -65,6 +69,7 @@
                     android:id="@+id/button_d12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d12" />
 
@@ -72,6 +77,7 @@
                     android:id="@+id/button_d20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d20" />
 
@@ -79,6 +85,7 @@
                     android:id="@+id/button_d100"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/button_d100" /> -->
             </LinearLayout>
