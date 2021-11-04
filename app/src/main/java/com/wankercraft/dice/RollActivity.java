@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.wankercraft.dice.databinding.ActivityRollBinding;
 
 import java.util.Random;
