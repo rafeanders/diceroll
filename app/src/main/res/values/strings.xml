@@ -11,4 +11,10 @@
     <string name="button_d20">D20</string>
     <string name="button_d100">D100</string>
     <string name="roll_button">Roll Button</string>
+    <string name="title_activity_d100">D100Activity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
