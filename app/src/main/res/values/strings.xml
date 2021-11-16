@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dice</string>
+    <string name="app_name">D&amp;Dice</string>
     <string name="roll_title">Press Die to Roll</string>
     <string name="title_activity_roll">RollActivity</string>
     <string name="select_sides">Select # of Sides!</string>
