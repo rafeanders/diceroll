@@ -1,4 +1,4 @@
-package com.wankercraft.dice;
+package com.phinamstudios.danddice;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.wankercraft.dice.databinding.ActivityRollBinding;
+import com.phinamstudios.danddice.databinding.ActivityRollBinding;
 
 import java.util.Random;
 
@@ -34,7 +34,7 @@ public class RollActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        com.wankercraft.dice.databinding.ActivityRollBinding binding = ActivityRollBinding.inflate(getLayoutInflater());
+        com.phinamstudios.danddice.databinding.ActivityRollBinding binding = ActivityRollBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Intent intent = getIntent();
@@ -46,7 +46,7 @@ public class RollActivity extends Activity {
         intiSound();
 
         mRollButton = findViewById(R.id.rollButton); //Roll button object reference
-        mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
+        mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per danddice selected
         mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die

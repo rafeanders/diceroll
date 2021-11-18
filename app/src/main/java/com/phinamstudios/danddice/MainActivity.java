@@ -1,4 +1,4 @@
-package com.wankercraft.dice;
+package com.phinamstudios.danddice;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 
-import com.wankercraft.dice.databinding.ActivityMainBinding;
+import com.phinamstudios.danddice.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -15,7 +15,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
 
-        com.wankercraft.dice.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.phinamstudios.danddice.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         //Button objects and listener declarations

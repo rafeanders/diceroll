@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="d4_1" type="id">@drawable/d4_1</item>
-    <item name="d4_2" type="id">@drawable/d4_2</item>
-    <item name="d4_3" type="id">@drawable/d4_3</item>
-    <item name="d4_4" type="id">@drawable/d4_4</item>
+    <item name="d4_1" type="id">@id/d4_1</item>
+    <item name="d4_2" type="id">@id/d4_2</item>
+    <item name="d4_3" type="id">@id/d4_3</item>
+    <item name="d4_4" type="id">@id/d4_4</item>
 </resources>

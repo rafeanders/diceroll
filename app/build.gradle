@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.wankercraft.dice"
+        applicationId "com.phinamstudios.danddice"
         minSdk 28
         targetSdk 31
         versionCode 1
