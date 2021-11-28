@@ -11,4 +11,8 @@
     <string name="button_d20">D20</string>
     <string name="button_d100">D100</string>
     <string name="roll_button">Roll Button</string>
+    <string name="main_menu_select_dice">Dice</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="choose_sides">Choose # Sides</string>
+    <string name="choose_style">Choose Style</string>
 </resources>

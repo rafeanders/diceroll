@@ -28,6 +28,7 @@
             android:name=".MainMenu"
             android:exported="true"
             android:label="@string/title_activity_main_menu"></activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -38,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".RollActivity"
             android:exported="false"

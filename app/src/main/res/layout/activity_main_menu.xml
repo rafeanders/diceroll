@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
             android:fontFamily="@font/uncial_antiqua"
-            android:text="@string/app_name" />
+            android:text="@string/app_name"
+            android:textSize="20sp" />
 
         <ScrollView
             android:layout_width="152dp"
@@ -33,15 +34,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
+                <!-- Go to # of sides selection -->
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/tosidesbutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
                     android:fontFamily="@font/uncial_antiqua"
-                    android:text="@string/main_menu_rollbutton"
+                    android:text="@string/choose_sides"
                     android:textColor="@android:color/secondary_text_dark"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/todiestylebutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:fontFamily="@font/uncial_antiqua"
+                    android:text="@string/choose_style"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textStyle="bold" />
+
             </LinearLayout>
         </ScrollView>
 
