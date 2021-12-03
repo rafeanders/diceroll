@@ -24,6 +24,10 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <activity
+            android:name=".ColourMenu"
+            android:exported="true"
+            android:label="@string/title_activity_colour_menu"></activity>
         <!-- Main Menu launcher activity -->
         <activity
             android:name=".MainMenu"
@@ -34,25 +38,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Select die main activity -->
+        </activity> <!-- Select die main activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
-            <!-- <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
-        </activity>
-
-        <!-- Roll die activity -->
+            </intent-filter>
+            -->
+        </activity> <!-- Roll die activity -->
         <activity
             android:name=".RollActivity"
             android:exported="false"
-            android:label="@string/title_activity_roll"></activity>
+            android:label="@string/title_activity_roll" />
     </application>
 
 </manifest>
