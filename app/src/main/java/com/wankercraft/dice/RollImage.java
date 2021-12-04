@@ -8,6 +8,8 @@ import android.view.View;
 
 
 // This class needs to return an image based on die colour saved in shared preferences.
+// Need to add all the new images etc
+// replacing d4 and d6 with correct color and adding two other color sets.
 
 public class RollImage {
 
