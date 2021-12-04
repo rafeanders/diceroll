@@ -18,9 +18,9 @@ public class RollImage {
     View v;
 
     //instantiating shared preference
-    SharedPreferences settings = context.getSharedPreferences("colourSetting", Activity.MODE_PRIVATE);
+    //SharedPreferences settings = context.getSharedPreferences("colourSetting", Activity.MODE_PRIVATE);
     // setting value selected by user for die colour
-    int colourSetting = settings.getInt("colourSetting", 0);
+    //int colourSetting = settings.getInt("colourSetting", 0);
 
     //Method to initialize context and view containers
     public RollImage(Context context, View v) {
@@ -29,7 +29,7 @@ public class RollImage {
     }
 
     public Drawable DefaultBG(int i) {
-        //Drawable references to image assets
+        //Drawable references to image assets default green/black colour
         Drawable d4BG = context.getDrawable(R.drawable.d4_4_greenblack);
         Drawable d6BG = context.getDrawable(R.drawable.d6_6_greenblack);
         Drawable d8BG = context.getDrawable(R.drawable.d8_8_greenblack);
@@ -37,7 +37,7 @@ public class RollImage {
         Drawable d12BG = context.getDrawable(R.drawable.d12_12_greenblack);
         Drawable d20BG = context.getDrawable(R.drawable.d20_20_greenblack);
 
-        // Logic to return correct image based which number sided die the user selected.
+        // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
         switch (i) {
             case 20: {
                 return d20BG;
