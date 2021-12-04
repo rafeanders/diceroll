@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -40,6 +41,10 @@ public class RollActivity extends Activity {
         com.wankercraft.dice.databinding.ActivityRollBinding binding = ActivityRollBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        View d = getLayoutInflater().inflate(R.layout.activity_roll, null);
+        RollImage rollImage = new RollImage(RollActivity.this, d);
+
+
         Intent intent = getIntent();
         numberSides = intent.getIntExtra("key", 0); // load number of sides into variable
 
@@ -49,7 +54,7 @@ public class RollActivity extends Activity {
         intiSound();
 
         mRollButton = findViewById(R.id.rollButton); //Roll button object reference
-        mRollButton.setBackground(DefaultBG(numberSides)); //Set the button background per dice selected
+        mRollButton.setBackground(rollImage.DefaultBG(numberSides)); //Set the button background per dice selected
         mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die
@@ -62,32 +67,38 @@ public class RollActivity extends Activity {
                 // display die side corresponding to random number generated
                 switch (numberSides) {
                     case 4: {
-                        v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
+                        //v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
+                        v.setBackground(rollImage.D4Image(rollValue)); //new implementation
                         isRolling = false; // We are done rolling
                         break;
                     }
                     case 6: {
-                        v.setBackground(D6Image(rollValue));
+                        //v.setBackground(D6Image(rollValue));
+                        v.setBackground(rollImage.D6Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 8: {
-                        v.setBackground(D8Image(rollValue));
+                        //v.setBackground(D8Image(rollValue));
+                        v.setBackground(rollImage.D8Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 10: {
-                        v.setBackground(D10Image(rollValue));
+                        //v.setBackground(D10Image(rollValue));
+                        v.setBackground(rollImage.D10Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 12: {
-                        v.setBackground(D12Image(rollValue));
+                        //v.setBackground(D12Image(rollValue));
+                        v.setBackground(rollImage.D12Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 20: {
-                        v.setBackground(D20Image(rollValue));
+                        //v.setBackground(D20Image(rollValue));
+                        v.setBackground(rollImage.D20Image(rollValue)); //new implementation
                         if (rollValue == 20) {
                             mRollsTotal.setTextColor(Color.GREEN);
                         } else if (rollValue == 1) {
@@ -154,7 +165,7 @@ public class RollActivity extends Activity {
 
     // This method provides the drawable reference for the initial image on the roll screen based
     // on user input.
-    private Drawable DefaultBG(int i) {
+    /*private Drawable DefaultBG(int i) {
         //Drawable references to image assets
         Drawable d4BG = getDrawable(R.drawable.d4_4);
         Drawable d6BG = getDrawable(R.drawable.d6_6);
@@ -465,7 +476,7 @@ public class RollActivity extends Activity {
                 return d20One;
             }
         } return null;
-    }
+    }*/
 
 
 
