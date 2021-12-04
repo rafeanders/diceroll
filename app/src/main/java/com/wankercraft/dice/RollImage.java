@@ -30,12 +30,12 @@ public class RollImage {
 
     public Drawable DefaultBG(int i) {
         //Drawable references to image assets
-        Drawable d4BG = context.getDrawable(R.drawable.d4_4);
-        Drawable d6BG = context.getDrawable(R.drawable.d6_6);
-        Drawable d8BG = context.getDrawable(R.drawable.d8_8);
-        Drawable d10BG = context.getDrawable(R.drawable.d10_10);
-        Drawable d12BG = context.getDrawable(R.drawable.d12_12);
-        Drawable d20BG = context.getDrawable(R.drawable.d20_20);
+        Drawable d4BG = context.getDrawable(R.drawable.d4_4_greenblack);
+        Drawable d6BG = context.getDrawable(R.drawable.d6_6_greenblack);
+        Drawable d8BG = context.getDrawable(R.drawable.d8_8_greenblack);
+        Drawable d10BG = context.getDrawable(R.drawable.d10_10_greenblack);
+        Drawable d12BG = context.getDrawable(R.drawable.d12_12_greenblack);
+        Drawable d20BG = context.getDrawable(R.drawable.d20_20_greenblack);
 
         // Logic to return correct image based which number sided die the user selected.
         switch (i) {
@@ -61,10 +61,10 @@ public class RollImage {
     }
 
     public Drawable D4Image(int i) {
-        Drawable d4One = context.getDrawable(R.drawable.d4_1);
-        Drawable d4Two = context.getDrawable(R.drawable.d4_2);
-        Drawable d4Three = context.getDrawable(R.drawable.d4_3);
-        Drawable d4Four = context.getDrawable(R.drawable.d4_4);
+        Drawable d4One = context.getDrawable(R.drawable.d4_1_greenblack);
+        Drawable d4Two = context.getDrawable(R.drawable.d4_2_greenblack);
+        Drawable d4Three = context.getDrawable(R.drawable.d4_3_greenblack);
+        Drawable d4Four = context.getDrawable(R.drawable.d4_4_greenblack);
 
         switch (i) {
             case 4: {
@@ -83,12 +83,12 @@ public class RollImage {
     }
 
     public Drawable D6Image(int i) {
-        Drawable d6One = context.getDrawable(R.drawable.d6_1);
-        Drawable d6Two = context.getDrawable(R.drawable.d6_2);
-        Drawable d6Three = context.getDrawable(R.drawable.d6_3);
-        Drawable d6Four = context.getDrawable(R.drawable.d6_4);
-        Drawable d6Five = context.getDrawable(R.drawable.d6_5);
-        Drawable d6Six = context.getDrawable(R.drawable.d6_6);
+        Drawable d6One = context.getDrawable(R.drawable.d6_1_greenblack);
+        Drawable d6Two = context.getDrawable(R.drawable.d6_2_greenblack);
+        Drawable d6Three = context.getDrawable(R.drawable.d6_3_greenblack);
+        Drawable d6Four = context.getDrawable(R.drawable.d6_4_greenblack);
+        Drawable d6Five = context.getDrawable(R.drawable.d6_5_greenblack);
+        Drawable d6Six = context.getDrawable(R.drawable.d6_6_greenblack);
 
         switch (i) {
             case 6: {
@@ -115,14 +115,14 @@ public class RollImage {
 
     //D8 images
     public Drawable D8Image(int i) {
-        Drawable d8One = context.getDrawable(R.drawable.d8_1);
-        Drawable d8Two = context.getDrawable(R.drawable.d8_2);
-        Drawable d8Three = context.getDrawable(R.drawable.d8_3);
-        Drawable d8Four = context.getDrawable(R.drawable.d8_4);
-        Drawable d8Five = context.getDrawable(R.drawable.d8_5);
-        Drawable d8Six = context.getDrawable(R.drawable.d8_6);
-        Drawable d8Seven = context.getDrawable(R.drawable.d8_7);
-        Drawable d8Eight = context.getDrawable(R.drawable.d8_8);
+        Drawable d8One = context.getDrawable(R.drawable.d8_1_greenblack);
+        Drawable d8Two = context.getDrawable(R.drawable.d8_2_greenblack);
+        Drawable d8Three = context.getDrawable(R.drawable.d8_3_greenblack);
+        Drawable d8Four = context.getDrawable(R.drawable.d8_4_greenblack);
+        Drawable d8Five = context.getDrawable(R.drawable.d8_5_greenblack);
+        Drawable d8Six = context.getDrawable(R.drawable.d8_6_greenblack);
+        Drawable d8Seven = context.getDrawable(R.drawable.d8_7_greenblack);
+        Drawable d8Eight = context.getDrawable(R.drawable.d8_8_greenblack);
 
         switch (i) {
             case 8: {
@@ -154,16 +154,16 @@ public class RollImage {
 
     //D10 images
     public Drawable D10Image(int i) {
-        Drawable d10One = context.getDrawable(R.drawable.d10_1);
-        Drawable d10Two = context.getDrawable(R.drawable.d10_2);
-        Drawable d10Three = context.getDrawable(R.drawable.d10_3);
-        Drawable d10Four = context.getDrawable(R.drawable.d10_4);
-        Drawable d10Five = context.getDrawable(R.drawable.d10_5);
-        Drawable d10Six = context.getDrawable(R.drawable.d10_6);
-        Drawable d10Seven = context.getDrawable(R.drawable.d10_7);
-        Drawable d10Eight = context.getDrawable(R.drawable.d10_8);
-        Drawable d10Nine = context.getDrawable(R.drawable.d10_9);
-        Drawable d10Ten = context.getDrawable(R.drawable.d10_10);
+        Drawable d10One = context.getDrawable(R.drawable.d10_1_greenblack);
+        Drawable d10Two = context.getDrawable(R.drawable.d10_2_greenblack);
+        Drawable d10Three = context.getDrawable(R.drawable.d10_3_greenblack);
+        Drawable d10Four = context.getDrawable(R.drawable.d10_4_greenblack);
+        Drawable d10Five = context.getDrawable(R.drawable.d10_5_greenblack);
+        Drawable d10Six = context.getDrawable(R.drawable.d10_6_greenblack);
+        Drawable d10Seven = context.getDrawable(R.drawable.d10_7_greenblack);
+        Drawable d10Eight = context.getDrawable(R.drawable.d10_8_greenblack);
+        Drawable d10Nine = context.getDrawable(R.drawable.d10_9_greenblack);
+        Drawable d10Ten = context.getDrawable(R.drawable.d10_10_greenblack);
 
         switch (i) {
             case 10: {
@@ -201,18 +201,18 @@ public class RollImage {
 
     //D12 images
     public Drawable D12Image(int i) {
-        Drawable d12One = context.getDrawable(R.drawable.d12_1);
-        Drawable d12Two = context.getDrawable(R.drawable.d12_2);
-        Drawable d12Three = context.getDrawable(R.drawable.d12_3);
-        Drawable d12Four = context.getDrawable(R.drawable.d12_4);
-        Drawable d12Five = context.getDrawable(R.drawable.d12_5);
-        Drawable d12Six = context.getDrawable(R.drawable.d12_6);
-        Drawable d12Seven = context.getDrawable(R.drawable.d12_7);
-        Drawable d12Eight = context.getDrawable(R.drawable.d12_8);
-        Drawable d12Nine = context.getDrawable(R.drawable.d12_9);
-        Drawable d12Ten = context.getDrawable(R.drawable.d12_10);
-        Drawable d12Eleven = context.getDrawable(R.drawable.d12_11);
-        Drawable d12Twelve = context.getDrawable(R.drawable.d12_12);
+        Drawable d12One = context.getDrawable(R.drawable.d12_1_greenblack);
+        Drawable d12Two = context.getDrawable(R.drawable.d12_2_greenblack);
+        Drawable d12Three = context.getDrawable(R.drawable.d12_3_greenblack);
+        Drawable d12Four = context.getDrawable(R.drawable.d12_4_greenblack);
+        Drawable d12Five = context.getDrawable(R.drawable.d12_5_greenblack);
+        Drawable d12Six = context.getDrawable(R.drawable.d12_6_greenblack);
+        Drawable d12Seven = context.getDrawable(R.drawable.d12_7_greenblack);
+        Drawable d12Eight = context.getDrawable(R.drawable.d12_8_greenblack);
+        Drawable d12Nine = context.getDrawable(R.drawable.d12_9_greenblack);
+        Drawable d12Ten = context.getDrawable(R.drawable.d12_10_greenblack);
+        Drawable d12Eleven = context.getDrawable(R.drawable.d12_11_greenblack);
+        Drawable d12Twelve = context.getDrawable(R.drawable.d12_12_greenblack);
 
         switch (i) {
             case 12: {
@@ -256,26 +256,26 @@ public class RollImage {
 
     //D20 images
     public Drawable D20Image(int i) {
-        Drawable d20One = context.getDrawable(R.drawable.d20_1);
-        Drawable d20Two = context.getDrawable(R.drawable.d20_2);
-        Drawable d20Three = context.getDrawable(R.drawable.d20_3);
-        Drawable d20Four = context.getDrawable(R.drawable.d20_4);
-        Drawable d20Five = context.getDrawable(R.drawable.d20_5);
-        Drawable d20Six = context.getDrawable(R.drawable.d20_6);
-        Drawable d20Seven = context.getDrawable(R.drawable.d20_7);
-        Drawable d20Eight = context.getDrawable(R.drawable.d20_8);
-        Drawable d20Nine = context.getDrawable(R.drawable.d20_9);
-        Drawable d20Ten = context.getDrawable(R.drawable.d20_10);
-        Drawable d20Eleven = context.getDrawable(R.drawable.d20_11);
-        Drawable d20Twelve = context.getDrawable(R.drawable.d20_12);
-        Drawable d20Thirteen = context.getDrawable(R.drawable.d20_13);
-        Drawable d20Fourteen = context.getDrawable(R.drawable.d20_14);
-        Drawable d20Fifteen = context.getDrawable(R.drawable.d20_15);
-        Drawable d20Sixteen = context.getDrawable(R.drawable.d20_16);
-        Drawable d20Seventeen = context.getDrawable(R.drawable.d20_17);
-        Drawable d20Eighteen = context.getDrawable(R.drawable.d20_18);
-        Drawable d20Nineteen = context.getDrawable(R.drawable.d20_19);
-        Drawable d20Twenty = context.getDrawable(R.drawable.d20_20);
+        Drawable d20One = context.getDrawable(R.drawable.d20_1_greenblack);
+        Drawable d20Two = context.getDrawable(R.drawable.d20_2_greenblack);
+        Drawable d20Three = context.getDrawable(R.drawable.d20_3_greenblack);
+        Drawable d20Four = context.getDrawable(R.drawable.d20_4_greenblack);
+        Drawable d20Five = context.getDrawable(R.drawable.d20_5_greenblack);
+        Drawable d20Six = context.getDrawable(R.drawable.d20_6_greenblack);
+        Drawable d20Seven = context.getDrawable(R.drawable.d20_7_greenblack);
+        Drawable d20Eight = context.getDrawable(R.drawable.d20_8_greenblack);
+        Drawable d20Nine = context.getDrawable(R.drawable.d20_9_greenblack);
+        Drawable d20Ten = context.getDrawable(R.drawable.d20_10_greenblack);
+        Drawable d20Eleven = context.getDrawable(R.drawable.d20_11_greenblack);
+        Drawable d20Twelve = context.getDrawable(R.drawable.d20_12_greenblack);
+        Drawable d20Thirteen = context.getDrawable(R.drawable.d20_13_greenblack);
+        Drawable d20Fourteen = context.getDrawable(R.drawable.d20_14_greenblack);
+        Drawable d20Fifteen = context.getDrawable(R.drawable.d20_15_greenblack);
+        Drawable d20Sixteen = context.getDrawable(R.drawable.d20_16_greenblack);
+        Drawable d20Seventeen = context.getDrawable(R.drawable.d20_17_greenblack);
+        Drawable d20Eighteen = context.getDrawable(R.drawable.d20_18_greenblack);
+        Drawable d20Nineteen = context.getDrawable(R.drawable.d20_19_greenblack);
+        Drawable d20Twenty = context.getDrawable(R.drawable.d20_20_greenblack);
 
         switch (i) {
             case 20: {

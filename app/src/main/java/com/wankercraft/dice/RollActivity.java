@@ -3,7 +3,6 @@ package com.wankercraft.dice;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;

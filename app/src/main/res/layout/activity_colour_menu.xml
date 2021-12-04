@@ -37,7 +37,7 @@
                 android:layout_marginTop="2dp"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/d20_14"
+                android:src="@drawable/d20_14_greenblack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
