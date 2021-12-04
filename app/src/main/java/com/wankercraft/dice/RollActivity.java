@@ -29,6 +29,9 @@ public class RollActivity extends Activity {
     private SoundPool soundPool; // Creating Sound container
     final private int[] sound = new int[3]; // Variable for array of sound files
 
+    // need variable and related shit for saved preferences for die colour chosen
+    // need to implement seperate class for providing the drawable object based on number of sides
+    // and colour of die selected. Ex: a D4 die with Colour 1 chosen.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

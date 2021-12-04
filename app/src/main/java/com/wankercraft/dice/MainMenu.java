@@ -44,10 +44,10 @@ public class MainMenu extends Activity implements View.OnClickListener {
             }
 
             // Start colour/style selection activity
-            //case R.id.todiestylebutton: {
-            //    startActivity(new Intent(this, SelectColour.class));
-            //    break;
-
+            case R.id.todiestylebutton: {
+                startActivity(new Intent(this, ColourMenu.class));
+                break;
+            }
             // Start Coin Flip activity
             //case R.id.tocoinflipbutton: {
             //    startActivity(new Intent(this, CoinFlip.class));
