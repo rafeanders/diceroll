@@ -1,6 +1,5 @@
 package com.wankercraft.dice;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -12,13 +11,8 @@ import android.view.View;
 // replacing d4 and d6 with correct color and adding two other color sets.
 
 public class RollImage {
-
-
     Context context;
     View v;
-
-
-
     // setting value selected by user for die colour
     int colourSetting = 0;
 
@@ -31,8 +25,114 @@ public class RollImage {
         colourSetting = settings.getInt("colour", 0);
     }
 
+    // main method called to return the background drawable recourse
+    public Drawable StartBG(int i) {
+        switch (colourSetting) {
+            case 0: {
+                return DefaultBG(i); //rename BGBlackGreen
+            }
+            case 1: {
+                //return BlackBG(i);
+            }
+            case 2: {
+                //return GreenBG(i);
+            }
+        }return null;
+    }
+
+    // Main method called to return d4 roll result image
+    //rename to D4Image
+    public Drawable D4ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+                return D4Image(i); //return D4GreenBlack;
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
+
+    //rename to D6Image
+    public Drawable D6ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
+
+    //rename to D8Image
+    public Drawable D8ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
+
+    //rename to D10Image
+    public Drawable D10ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
+
+    //rename to D12Image
+    public Drawable D12ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
+
+    //rename to D20Image
+    public Drawable D20ImageTemp(int i) {
+        switch (colourSetting) {
+            case 0: {
+
+            }
+            case 1: {
+
+            }
+            case 2: {
+
+            }
+        }return null;
+    }
 
     // these methods returns default background for green/black colour die
+    // rename GreenBlackBG
     public Drawable DefaultBG(int i) {
         //Drawable references to image assets default green/black colour
         Drawable d4BG_GB = context.getDrawable(R.drawable.d4_4_greenblack);
@@ -65,6 +165,7 @@ public class RollImage {
         } return null;
     }
 
+    // rename D4GreenBlack
     public Drawable D4Image(int i) {
         Drawable d4One = context.getDrawable(R.drawable.d4_1_greenblack);
         Drawable d4Two = context.getDrawable(R.drawable.d4_2_greenblack);
@@ -87,6 +188,7 @@ public class RollImage {
         } return null;
     }
 
+    // rename D6GreenBlack
     public Drawable D6Image(int i) {
         Drawable d6One = context.getDrawable(R.drawable.d6_1_greenblack);
         Drawable d6Two = context.getDrawable(R.drawable.d6_2_greenblack);
@@ -118,7 +220,7 @@ public class RollImage {
     }
 
 
-    //D8 images
+    // rename D8GreenBlack
     public Drawable D8Image(int i) {
         Drawable d8One = context.getDrawable(R.drawable.d8_1_greenblack);
         Drawable d8Two = context.getDrawable(R.drawable.d8_2_greenblack);
@@ -157,7 +259,7 @@ public class RollImage {
         } return null;
     }
 
-    //D10 images
+    // rename D10GreenBlack
     public Drawable D10Image(int i) {
         Drawable d10One = context.getDrawable(R.drawable.d10_1_greenblack);
         Drawable d10Two = context.getDrawable(R.drawable.d10_2_greenblack);
@@ -204,7 +306,7 @@ public class RollImage {
         } return null;
     }
 
-    //D12 images
+    // rename D12GreenBlack
     public Drawable D12Image(int i) {
         Drawable d12One = context.getDrawable(R.drawable.d12_1_greenblack);
         Drawable d12Two = context.getDrawable(R.drawable.d12_2_greenblack);
@@ -259,7 +361,7 @@ public class RollImage {
         } return null;
     }
 
-    //D20 images
+    // rename D20GreenBlack
     public Drawable D20Image(int i) {
         Drawable d20One = context.getDrawable(R.drawable.d20_1_greenblack);
         Drawable d20Two = context.getDrawable(R.drawable.d20_2_greenblack);
@@ -345,5 +447,4 @@ public class RollImage {
             }
         } return null;
     }
-
 }
