@@ -41,7 +41,7 @@ public class RollActivity extends Activity {
         setContentView(binding.getRoot());
 
         View d = getLayoutInflater().inflate(R.layout.activity_roll, null);
-        RollImage rollImage = new RollImage(RollActivity.this, d);
+        RollImage rollImage = new RollImage(this, d);
 
 
         Intent intent = getIntent();

@@ -1,6 +1,7 @@
 package com.wankercraft.dice;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,9 +15,9 @@ public class ColourMenu extends Activity implements View.OnClickListener {
 
     private TextView mTextView;
     private ActivityColourMenuBinding binding;
-    SharedPreferences settings = getSharedPreferences("colourSetting", Activity.MODE_PRIVATE);
-    SharedPreferences.Editor settingsEditor = settings.edit();
-    private int colourSetting = 0;
+    SharedPreferences settings;
+    SharedPreferences.Editor settingsEditor;
+    int colourSetting = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +25,10 @@ public class ColourMenu extends Activity implements View.OnClickListener {
 
         binding = ActivityColourMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        settings = getSharedPreferences("userSettings", Context.MODE_PRIVATE);
+        settingsEditor = settings.edit();
         // instantiating settings
         LoadSettings();
-
         mTextView = binding.text;
 
         // instantiating buttons to select die colour
@@ -47,34 +48,34 @@ public class ColourMenu extends Activity implements View.OnClickListener {
             //Select colour 1. Also the default setting
             case R.id.imageButton2:
                 // save selection to variable/persistent setting
-                SaveSetting("colourSetting", 0);
+                SaveSetting("colour", 0);
                 // Load Main activity, where number of sides is selected
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             // Select colour 2
             case R.id.imageButton3:
                 // save selection to variable/persistent setting
-                SaveSetting("colourSetting", 1);
+                SaveSetting("colour", 1);
                 // Load Main activity, where number of sides is selected
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             // Select colour 3
             case R.id.imageButton4:
                 // save selection to variable/persistent setting
-                SaveSetting("colourSetting", 2);
+                SaveSetting("colour", 2);
                 // Load Main activity, where number of sides is selected
                 startActivity(new Intent(this, MainActivity.class));
                 break;
         }
     }
 
-    private void SaveSetting(String setting, int value) {
-        settingsEditor.putInt(setting, value);
-        settingsEditor.commit();
+    private void SaveSetting(String colour, int value) {
+        settingsEditor.putInt(colour, value);
+        settingsEditor.apply();
     }
 
     private void LoadSettings() {
-        colourSetting = settings.getInt("colourSetting", 0);
+        colourSetting = settings.getInt("colour", 0);
     }
 
 }

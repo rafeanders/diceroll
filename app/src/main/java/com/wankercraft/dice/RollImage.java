@@ -17,45 +17,50 @@ public class RollImage {
     Context context;
     View v;
 
-    //instantiating shared preference
-    //SharedPreferences settings = context.getSharedPreferences("colourSetting", Activity.MODE_PRIVATE);
+
+
     // setting value selected by user for die colour
-    //int colourSetting = settings.getInt("colourSetting", 0);
+    int colourSetting = 0;
 
     //Method to initialize context and view containers
     public RollImage(Context context, View v) {
         this.context = context;
         this.v = v;
+        //instantiating shared preference
+        SharedPreferences settings = context.getSharedPreferences("userSettings", Context.MODE_PRIVATE);
+        colourSetting = settings.getInt("colour", 0);
     }
 
+
+    // these methods returns default background for green/black colour die
     public Drawable DefaultBG(int i) {
         //Drawable references to image assets default green/black colour
-        Drawable d4BG = context.getDrawable(R.drawable.d4_4_greenblack);
-        Drawable d6BG = context.getDrawable(R.drawable.d6_6_greenblack);
-        Drawable d8BG = context.getDrawable(R.drawable.d8_8_greenblack);
-        Drawable d10BG = context.getDrawable(R.drawable.d10_10_greenblack);
-        Drawable d12BG = context.getDrawable(R.drawable.d12_12_greenblack);
-        Drawable d20BG = context.getDrawable(R.drawable.d20_20_greenblack);
+        Drawable d4BG_GB = context.getDrawable(R.drawable.d4_4_greenblack);
+        Drawable d6BG_GB = context.getDrawable(R.drawable.d6_6_greenblack);
+        Drawable d8BG_GB = context.getDrawable(R.drawable.d8_8_greenblack);
+        Drawable d10BG_GB = context.getDrawable(R.drawable.d10_10_greenblack);
+        Drawable d12BG_GB= context.getDrawable(R.drawable.d12_12_greenblack);
+        Drawable d20BG_GB = context.getDrawable(R.drawable.d20_20_greenblack);
 
         // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
         switch (i) {
             case 20: {
-                return d20BG;
+                return d20BG_GB;
             }
             case 12: {
-                return d12BG;
+                return d12BG_GB;
             }
             case 10: {
-                return d10BG;
+                return d10BG_GB;
             }
             case 8: {
-                return d8BG;
+                return d8BG_GB;
             }
             case 6: {
-                return d6BG;
+                return d6BG_GB;
             }
             case 4: {
-                return d4BG;
+                return d4BG_GB;
             }
         } return null;
     }
