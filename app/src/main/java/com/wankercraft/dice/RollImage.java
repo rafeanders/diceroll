@@ -133,6 +133,8 @@ public class RollImage {
 
     // these methods returns default background for green/black colour die
     // rename GreenBlackBG
+    // this should just return a bg drawable object based on what colour is selected. not just be
+    // one colour specific. shouldn't need separate methods for all the different colours
     public Drawable DefaultBG(int i) {
         //Drawable references to image assets default green/black colour
         Drawable d4BG_GB = context.getDrawable(R.drawable.d4_4_greenblack);
