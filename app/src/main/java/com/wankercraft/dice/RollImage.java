@@ -29,7 +29,7 @@ public class RollImage {
     public Drawable StartBG(int i) {
         switch (colourSetting) {
             case 0: {
-                return DefaultBG(i); //rename BGBlackGreen
+                return DefaultBG(i); //rename GreenBlackBG
             }
             case 1: {
                 //return BlackBG(i);
@@ -131,10 +131,8 @@ public class RollImage {
         }return null;
     }
 
-    // these methods returns default background for green/black colour die
+    // this method returns default background for green/black colour die
     // rename GreenBlackBG
-    // this should just return a bg drawable object based on what colour is selected. not just be
-    // one colour specific. shouldn't need separate methods for all the different colours
     public Drawable DefaultBG(int i) {
         //Drawable references to image assets default green/black colour
         Drawable d4BG_GB = context.getDrawable(R.drawable.d4_4_greenblack);
@@ -143,7 +141,6 @@ public class RollImage {
         Drawable d10BG_GB = context.getDrawable(R.drawable.d10_10_greenblack);
         Drawable d12BG_GB= context.getDrawable(R.drawable.d12_12_greenblack);
         Drawable d20BG_GB = context.getDrawable(R.drawable.d20_20_greenblack);
-
         // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
         switch (i) {
             case 20: {
@@ -167,13 +164,95 @@ public class RollImage {
         } return null;
     }
 
-    // rename D4GreenBlack
-    public Drawable D4Image(int i) {
-        Drawable d4One = context.getDrawable(R.drawable.d4_1_greenblack);
-        Drawable d4Two = context.getDrawable(R.drawable.d4_2_greenblack);
-        Drawable d4Three = context.getDrawable(R.drawable.d4_3_greenblack);
-        Drawable d4Four = context.getDrawable(R.drawable.d4_4_greenblack);
+    // this method returns default background for black colour die
+    public Drawable blackBG(int i) {
+        //Drawable references to image assets for black die colour
+        Drawable d4BG_B = context.getDrawable(R.drawable.d4_4_black);
+        Drawable d6BG_B = context.getDrawable(R.drawable.d6_6_black);
+        Drawable d8BG_B = context.getDrawable(R.drawable.d8_8_black);
+        Drawable d10BG_B = context.getDrawable(R.drawable.d10_10_black);
+        Drawable d12BG_B= context.getDrawable(R.drawable.d12_12_black);
+        Drawable d20BG_B = context.getDrawable(R.drawable.d20_20_black);
+        // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
+        switch (i) {
+            case 20: {
+                return d20BG_B;
+            }
+            case 12: {
+                return d12BG_B;
+            }
+            case 10: {
+                return d10BG_B;
+            }
+            case 8: {
+                return d8BG_B;
+            }
+            case 6: {
+                return d6BG_B;
+            }
+            case 4: {
+                return d4BG_B;
+            }
+        } return null;
+    }
 
+    // this method returns default background for green colour die
+    public Drawable greenBG(int i) {
+        //Drawable reference to image assets for green die colour
+        /*
+        Drawable d4BG_G = context.getDrawable(R.drawable.d4_4_green);
+        Drawable d6BG_G = context.getDrawable(R.drawable.d6_6_green);
+        Drawable d8BG_G = context.getDrawable(R.drawable.d8_8_green);
+        Drawable d10BG_G = context.getDrawable(R.drawable.d10_10_green);
+        Drawable d12BG_G= context.getDrawable(R.drawable.d12_12_green);
+        Drawable d20BG_G = context.getDrawable(R.drawable.d20_20_green);
+         */
+
+        // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
+        switch (i) {
+            case 20: {
+                return d20BG_G;
+            }
+            case 12: {
+                return d12BG_G;
+            }
+            case 10: {
+                return d10BG_G;
+            }
+            case 8: {
+                return d8BG_G;
+            }
+            case 6: {
+                return d6BG_G;
+            }
+            case 4: {
+                return d4BG_G;
+            }
+        } return null;
+    }
+
+    // rename D4GreenBlack
+    //experimenting with if to handle colour setting
+    public Drawable D4Image(int i) {
+        if (colourSetting == 0) {
+            // Green/Black die images
+            Drawable d4One = context.getDrawable(R.drawable.d4_1_greenblack);
+            Drawable d4Two = context.getDrawable(R.drawable.d4_2_greenblack);
+            Drawable d4Three = context.getDrawable(R.drawable.d4_3_greenblack);
+            Drawable d4Four = context.getDrawable(R.drawable.d4_4_greenblack);
+        }else if (colourSetting == 1) {
+            // Black die images
+            Drawable d4One = context.getDrawable(R.drawable.d4_1_black);
+            Drawable d4Two = context.getDrawable(R.drawable.d4_2_black);
+            Drawable d4Three = context.getDrawable(R.drawable.d4_3_black);
+            Drawable d4Four = context.getDrawable(R.drawable.d4_4_black);
+        }else if (colourSetting ==2) {
+            // Green die images
+            Drawable d4One = context.getDrawable(R.drawable.d4_1_green);
+            Drawable d4Two = context.getDrawable(R.drawable.d4_2_green);
+            Drawable d4Three = context.getDrawable(R.drawable.d4_3_green);
+            Drawable d4Four = context.getDrawable(R.drawable.d4_4_green);
+        }
         switch (i) {
             case 4: {
                 return d4Four;
