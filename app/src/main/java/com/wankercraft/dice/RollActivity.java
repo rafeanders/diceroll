@@ -16,7 +16,7 @@ import java.util.Random;
 
 
 // TO-DO:
-// Calculate total for all rolls this session. Possible include reset button
+// Noting atm on this one
 
 public class RollActivity extends Activity {
 
@@ -126,6 +126,8 @@ public class RollActivity extends Activity {
         rollValue = r.nextInt((numberSides - 1) + 1) + 1;
     }
 
+    //region AUDIO
+
     // Initialize sound manager and load sounds into array
     private void intiSound() {
         AudioAttributes aa = new AudioAttributes.Builder()
@@ -161,6 +163,10 @@ public class RollActivity extends Activity {
                 break;
         }
     }
+
+    //endregion
+
+    //region OLD SHIT HERE IN THE EVENT SOMETHING BREAKS IN ROLLIMAGE
 
     // This method provides the drawable reference for the initial image on the roll screen based
     // on user input.
@@ -480,5 +486,7 @@ public class RollActivity extends Activity {
 
 
     //d100 images yeeeesh
+
+    //endregion
 
 }

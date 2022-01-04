@@ -38,8 +38,6 @@ public class ColourMenu extends Activity implements View.OnClickListener {
         mColourButton2.setOnClickListener(this);
         ImageButton mColourButton3 = findViewById(R.id.imageButton4);
         mColourButton3.setOnClickListener(this);
-
-
     }
 
     @Override

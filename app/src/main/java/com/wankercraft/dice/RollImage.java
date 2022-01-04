@@ -5,10 +5,14 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
+//region TO-DO:
 
+// TO-DO:
 // This class needs to return an image based on die colour saved in shared preferences.
 // Need to add all the new images etc
 // replacing d4 and d6 with correct color and adding two other color sets.
+
+//endregion
 
 public class RollImage {
     Context context;
@@ -22,8 +26,10 @@ public class RollImage {
         this.v = v;
         //instantiating shared preference
         SharedPreferences settings = context.getSharedPreferences("userSettings", Context.MODE_PRIVATE);
-        colourSetting = settings.getInt("colour", 0);
+        colourSetting = settings.getInt("colour", 0); // Assigning value from shared settings
     }
+
+    //region Main Drawable Return Methods
 
     // main method called to return the background drawable recourse
     public Drawable StartBG(int i) {
@@ -32,10 +38,10 @@ public class RollImage {
                 return DefaultBG(i); //rename GreenBlackBG
             }
             case 1: {
-                //return BlackBG(i);
+                return BlackBG(i);
             }
             case 2: {
-                //return GreenBG(i);
+                return GreenBG(i);
             }
         }return null;
     }
@@ -131,6 +137,10 @@ public class RollImage {
         }return null;
     }
 
+    //endregion
+
+    //region Background Images
+
     // this method returns default background for green/black colour die
     // rename GreenBlackBG
     public Drawable DefaultBG(int i) {
@@ -165,7 +175,7 @@ public class RollImage {
     }
 
     // this method returns default background for black colour die
-    public Drawable blackBG(int i) {
+    public Drawable BlackBG(int i) {
         //Drawable references to image assets for black die colour
         Drawable d4BG_B = context.getDrawable(R.drawable.d4_4_black);
         Drawable d6BG_B = context.getDrawable(R.drawable.d6_6_black);
@@ -197,7 +207,7 @@ public class RollImage {
     }
 
     // this method returns default background for green colour die
-    public Drawable greenBG(int i) {
+    public Drawable GreenBG(int i) {
         //Drawable reference to image assets for green die colour
         /*
         Drawable d4BG_G = context.getDrawable(R.drawable.d4_4_green);
@@ -230,6 +240,9 @@ public class RollImage {
             }
         } return null;
     }
+    //endregion
+
+    //region D4 Die Images
 
     // rename D4GreenBlack
     //experimenting with if to handle colour setting
@@ -269,6 +282,10 @@ public class RollImage {
         } return null;
     }
 
+    //endregion
+
+    //region D6 Die Images
+
     // rename D6GreenBlack
     public Drawable D6Image(int i) {
         Drawable d6One = context.getDrawable(R.drawable.d6_1_greenblack);
@@ -300,6 +317,9 @@ public class RollImage {
         } return null;
     }
 
+    //endregion
+
+    //region D8 Die Images
 
     // rename D8GreenBlack
     public Drawable D8Image(int i) {
@@ -339,6 +359,10 @@ public class RollImage {
             }
         } return null;
     }
+
+    //endregion
+
+    //region D10 Die Images
 
     // rename D10GreenBlack
     public Drawable D10Image(int i) {
@@ -386,6 +410,10 @@ public class RollImage {
             }
         } return null;
     }
+
+    //endregion
+
+    //region D12 Die Images
 
     // rename D12GreenBlack
     public Drawable D12Image(int i) {
@@ -441,6 +469,10 @@ public class RollImage {
             }
         } return null;
     }
+
+    //endregion
+
+    //region D20 Die Images
 
     // rename D20GreenBlack
     public Drawable D20Image(int i) {
@@ -528,4 +560,6 @@ public class RollImage {
             }
         } return null;
     }
+
+    //endregion
 }
