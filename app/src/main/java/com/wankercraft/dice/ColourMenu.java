@@ -67,6 +67,8 @@ public class ColourMenu extends Activity implements View.OnClickListener {
         }
     }
 
+    //region SETTINGS
+
     private void SaveSetting(String colour, int value) {
         settingsEditor.putInt(colour, value);
         settingsEditor.apply();
@@ -75,5 +77,7 @@ public class ColourMenu extends Activity implements View.OnClickListener {
     private void LoadSettings() {
         colourSetting = settings.getInt("colour", 0);
     }
+
+    //endregion
 
 }
