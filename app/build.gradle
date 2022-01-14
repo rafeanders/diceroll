@@ -9,8 +9,8 @@ android {
         applicationId "com.wankercraft.dice"
         minSdk 28
         targetSdk 31
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "2"
 
     }
 

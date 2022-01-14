@@ -55,7 +55,7 @@
                     android:textColor="@android:color/secondary_text_dark"
                     android:textStyle="bold" />
 
-                <Button
+                <!--<Button
                     android:id="@+id/tocoinflipbutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                     android:fontFamily="@font/uncial_antiqua"
                     android:text="@string/flip_coin"
                     android:textColor="@android:color/secondary_text_dark"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" /> -->
 
             </LinearLayout>
         </ScrollView>
