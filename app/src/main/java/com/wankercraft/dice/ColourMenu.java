@@ -7,14 +7,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.wankercraft.dice.databinding.ActivityColourMenuBinding;
 
 public class ColourMenu extends Activity implements View.OnClickListener {
 
-    private TextView mTextView;
-    private ActivityColourMenuBinding binding;
     SharedPreferences settings;
     SharedPreferences.Editor settingsEditor;
     int colourSetting = 0;
@@ -23,13 +20,14 @@ public class ColourMenu extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityColourMenuBinding.inflate(getLayoutInflater());
+        //private TextView mTextView;
+        com.wankercraft.dice.databinding.ActivityColourMenuBinding binding = ActivityColourMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         settings = getSharedPreferences("userSettings", Context.MODE_PRIVATE);
         settingsEditor = settings.edit();
         // instantiating settings
         LoadSettings();
-        mTextView = binding.text;
+        //mTextView = binding.text;
 
         // instantiating buttons to select die colour
         ImageButton mColourButton1 = findViewById(R.id.imageButton2);

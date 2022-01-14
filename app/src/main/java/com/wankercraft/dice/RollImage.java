@@ -18,7 +18,7 @@ public class RollImage {
     Context context;
     View v;
     // setting value selected by user for die colour
-    int colourSetting = 0;
+    int colourSetting;
 
     //Method to initialize context and view containers
     public RollImage(Context context, View v) {

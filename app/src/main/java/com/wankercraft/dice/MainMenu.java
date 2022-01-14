@@ -5,23 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.wankercraft.dice.databinding.ActivityMainMenuBinding;
 
 public class MainMenu extends Activity implements View.OnClickListener {
 
-    private TextView mTextView;
-    private ActivityMainMenuBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
+        //private TextView mTextView;
+        com.wankercraft.dice.databinding.ActivityMainMenuBinding binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mTextView = binding.mainmenuHead;
+        //mTextView = binding.mainmenuHead;
 
         // Instantiate Buttons with onlcick listener
         Button mButtonSelectDie = findViewById(R.id.tosidesbutton);
