@@ -35,7 +35,7 @@ public class RollImage {
     public Drawable StartBG(int i) {
         switch (colourSetting) {
             case 0: {
-                return DefaultBG(i); //rename GreenBlackBG
+                return GreenBlackBG(i); //rename GreenBlackBG
             }
             case 1: {
                 return BlackBG(i);
@@ -136,7 +136,7 @@ public class RollImage {
 
     // this method returns default background for green/black colour die
     // rename GreenBlackBG
-    public Drawable DefaultBG(int i) {
+    public Drawable GreenBlackBG(int i) {
         //Drawable references to image assets default green/black colour
         Drawable d4BG_GB = context.getDrawable(R.drawable.d4_4_greenblack);
         Drawable d6BG_GB = context.getDrawable(R.drawable.d6_6_greenblack);
@@ -206,8 +206,8 @@ public class RollImage {
         Drawable d6BG_G = context.getDrawable(R.drawable.d6_6_green);
         Drawable d8BG_G = context.getDrawable(R.drawable.d8_8_green);
         Drawable d10BG_G = context.getDrawable(R.drawable.d10_10_green);
-        Drawable d12BG_G = context.getDrawable(R.drawable.d10_8_green); // placeholder still photoshopping die images
-        Drawable d20BG_G = context.getDrawable(R.drawable.d10_9_green); // placeholder still photoshopping die images
+        Drawable d12BG_G = context.getDrawable(R.drawable.d12_12_green);
+        Drawable d20BG_G = context.getDrawable(R.drawable.d20_20_green);
 
         // Logic to return correct image based which number sided die the user selected, and the colour chosen in settings
         switch (i) {

@@ -53,7 +53,7 @@ public class RollActivity extends Activity {
         intiSound();
 
         mRollButton = findViewById(R.id.rollButton); //Roll button object reference
-        mRollButton.setBackground(rollImage.DefaultBG(numberSides)); //Set the button background per dice selected
+        mRollButton.setBackground(rollImage.StartBG(numberSides)); //Set the button background per dice selected
         mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
                 isRolling = true; // We are now rolling the die
