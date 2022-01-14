@@ -25,8 +25,8 @@ public class MainMenu extends Activity implements View.OnClickListener {
         mButtonSelectDie.setOnClickListener(this);
         Button mButtonSelectColour = findViewById(R.id.todiestylebutton);
         mButtonSelectColour.setOnClickListener(this);
-        Button mButtonFlipCoin = findViewById(R.id.tocoinflipbutton);
-        mButtonFlipCoin.setOnClickListener(this);
+        //Button mButtonFlipCoin = findViewById(R.id.tocoinflipbutton);
+        //mButtonFlipCoin.setOnClickListener(this);
 
 
     }
