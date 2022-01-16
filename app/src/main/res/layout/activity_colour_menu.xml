@@ -54,7 +54,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/d4_2"
+                android:src="@drawable/d4_4_black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -68,7 +68,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/d6_3"
+                android:src="@drawable/d6_3_green"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
