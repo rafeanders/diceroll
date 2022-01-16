@@ -17,7 +17,7 @@ public class MainMenu extends Activity implements View.OnClickListener {
         //private TextView mTextView;
         com.wankercraft.dice.databinding.ActivityMainMenuBinding binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        
         //mTextView = binding.mainmenuHead;
 
         // Instantiate Buttons with onlcick listener
