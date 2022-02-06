@@ -17,4 +17,5 @@
     <string name="choose_style">Die Colour</string>
     <string name="flip_coin">Flip Coin</string>
     <string name="colour_menu_title">Pick Colour</string>
+    <string name="hello_world">Hello Round World!</string>
 </resources>
