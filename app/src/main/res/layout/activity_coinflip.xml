@@ -23,6 +23,14 @@
             android:fontFamily="@font/uncial_antiqua"
             android:text="@string/flip_coin_title"
             android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/coiflipButton"
+            android:layout_width="82dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|center"
+            android:contentDescription="@string/flip_coin"/>
+
     </FrameLayout>
 
 </androidx.wear.widget.BoxInsetLayout>
