@@ -25,10 +25,13 @@
             android:value="true" />
 
         <activity
+            android:name=".CoinflipActivity"
+            android:exported="true"
+            android:label="@string/title_activity_coinflip"></activity>
+        <activity
             android:name=".ColourMenu"
             android:exported="true"
-            android:label="@string/title_activity_colour_menu"></activity>
-        <!-- Main Menu launcher activity -->
+            android:label="@string/title_activity_colour_menu" /> <!-- Main Menu launcher activity -->
         <activity
             android:name=".MainMenu"
             android:exported="true"

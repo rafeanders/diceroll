@@ -18,4 +18,6 @@
     <string name="flip_coin">Flip Coin</string>
     <string name="title_activity_colour_menu">ColourMenu</string>
     <string name="colour_menu_title">Pick Colour</string>
+    <string name="title_activity_coinflip">CoinflipActivity</string>
+    <string name="flip_coin_title">Flip A Coin</string>
 </resources>
