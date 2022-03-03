@@ -18,7 +18,7 @@ public class CoinflipActivity extends Activity {
 
     private boolean isFlipping; // is the coin being flipped
 
-    private float degreesRotation = 720f; // how many degrees of rotation
+    private float degreesRotation = 720f; // how many degrees of rotation default will land on heads
     private int animationDuration = 1000; // how long it should take
 
     private Drawable coinHeads;
@@ -43,31 +43,30 @@ public class CoinflipActivity extends Activity {
             if (!isFlipping) {
                 isFlipping = true;
 
+                //do the coin flip
+                CoinToss();
+
                 //start flipping animation i may miss understand right now what the 720 is
                 mFlipButton.animate().setDuration(animationDuration).rotationXBy(degreesRotation).start();
                 // while the animation sill has duration change image based on position
-                while(mFlipButton.animate().getDuration() != 0) {
-                    if ((mFlipButton.getRotationX() >= 0 && mFlipButton.getRotationX() <= 90) || (mFlipButton.getRotationX() > 270 && mFlipButton.getRotationX() <= 360)) {
-                        mFlipButton.setBackground(coinHeads);
-                    } else if (mFlipButton.getRotationX() > 90 && mFlipButton.getRotationX() <= 270) {
-                        mFlipButton.setBackground(coinTails);
-                    }
-                }
+                // curently this bit locks up haard
+                //while(mFlipButton.animate().getDuration() != 0) {
+                //    if ((mFlipButton.getRotationX() >= 0 && mFlipButton.getRotationX() <= 90) || (mFlipButton.getRotationX() > 270 && mFlipButton.getRotationX() <= 360)) {
+                //        mFlipButton.setBackground(coinHeads);
+                //    } else if (mFlipButton.getRotationX() > 90 && mFlipButton.getRotationX() <= 270) {
+                //        mFlipButton.setBackground(coinTails);
+                //    }
+                //}
             }
+            isFlipping = false;
         });
     }
 
-    // coin is heads face up at 0 degrees and 360 degrees, and tails face up at 180 degrees
-
-
-    private int CoinToss() {
+    private void CoinToss() {
         Random r = new Random();
-        int val;
-        val = r.nextInt(1);
-        return val;
+        // 0 == heads 1 == tails
+        float tossValue = r.nextFloat();
+        // set flip rotation total amount based on heads or tails so coin lands on heads or tails. 0/360/720 degrees is heads, 180/540/900 is tails
+        degreesRotation = tossValue > 0.5f ? 900f : 720f;
     }
-
-
-
-
 }

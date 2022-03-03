@@ -25,15 +25,15 @@ public class MainMenu extends Activity implements View.OnClickListener {
         mButtonSelectDie.setOnClickListener(this);
         Button mButtonSelectColour = findViewById(R.id.todiestylebutton);
         mButtonSelectColour.setOnClickListener(this);
-        //Button mButtonFlipCoin = findViewById(R.id.tocoinflipbutton);
-        //mButtonFlipCoin.setOnClickListener(this);
+        Button mButtonFlipCoin = findViewById(R.id.tocoinflipbutton);
+        mButtonFlipCoin.setOnClickListener(this);
 
 
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             // Start main die roll activity
             case R.id.tosidesbutton: {
                 startActivity(new Intent(this, MainActivity.class));
@@ -46,9 +46,10 @@ public class MainMenu extends Activity implements View.OnClickListener {
                 break;
             }
             // Start Coin Flip activity
-            //case R.id.tocoinflipbutton: {
-            //    startActivity(new Intent(this, CoinFlip.class));
-            //    break;
+            case R.id.tocoinflipbutton: {
+                startActivity(new Intent(this, CoinflipActivity.class));
+                break;
+            }
         }
     }
 }
