@@ -25,10 +25,19 @@
             android:value="true" />
 
         <activity
+            android:name=".StatsMainScren"
+            android:exported="true"
+            android:label="@string/title_activity_stats_main_scren">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ColourMenu"
             android:exported="true"
-            android:label="@string/title_activity_colour_menu"></activity>
-        <!-- Main Menu launcher activity -->
+            android:label="@string/title_activity_colour_menu" /> <!-- Main Menu launcher activity -->
         <activity
             android:name=".MainMenu"
             android:exported="true"
