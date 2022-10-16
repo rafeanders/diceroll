@@ -67,8 +67,8 @@ public class ColourMenu extends Activity implements View.OnClickListener {
 
     //region SETTINGS
 
-    private void SaveSetting(String colour, int value) {
-        settingsEditor.putInt(colour, value);
+    private void SaveSetting(String setting, int value) {
+        settingsEditor.putInt(setting, value);
         settingsEditor.apply();
     }
 
