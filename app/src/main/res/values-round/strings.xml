@@ -16,6 +16,11 @@
     <string name="choose_sides">Select Die</string>
     <string name="choose_style">Die Colour</string>
     <string name="flip_coin">Flip Coin</string>
+    <string name="title_activity_colour_menu">ColourMenu</string>
     <string name="colour_menu_title">Pick Colour</string>
-    <string name="hello_world">Hello Round World!</string>
+    <string name="title_activity_stats_main_screen">StatsMainScreen</string>
+    <string name="stats_title">Stats</string>
+    <string name="total_rolls">Total Rolls</string>
+    <string name="total_rolls_value"></string>
+    <string name="details">Details</string>
 </resources>

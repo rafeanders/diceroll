@@ -47,6 +47,7 @@ public class RollImage {
     }
 
     public Drawable D4Image(int i) {
+        Utils.incrementRollTotal(this.context, "totald4rolls");
         switch (colourSetting) {
             case 0: {
                 return D4GreenBlack(i); //return green black die image

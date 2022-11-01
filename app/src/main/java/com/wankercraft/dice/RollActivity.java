@@ -56,6 +56,7 @@ public class RollActivity extends Activity {
         mRollButton.setBackground(rollImage.StartBG(numberSides)); //Set the button background per dice selected
         mRollButton.setOnClickListener(v -> { //listener for click on roll button
             if(!isRolling) {
+                Utils.incrementRollTotal(this, "totalrolls");
                 isRolling = true; // We are now rolling the die
                 // play sound of die rolling
                 rollSound();
@@ -66,36 +67,42 @@ public class RollActivity extends Activity {
                 // display die side corresponding to random number generated
                 switch (numberSides) {
                     case 4: {
+                        Utils.incrementRollTotal(this, "totald4rolls");
                         //v.setBackground(D4Image(rollValue)); // Assigns background image for roll value
                         v.setBackground(rollImage.D4Image(rollValue)); //new implementation
                         isRolling = false; // We are done rolling
                         break;
                     }
                     case 6: {
+                        Utils.incrementRollTotal(this, "totald6rolls");
                         //v.setBackground(D6Image(rollValue));
                         v.setBackground(rollImage.D6Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 8: {
+                        Utils.incrementRollTotal(this, "totald8rolls");
                         //v.setBackground(D8Image(rollValue));
                         v.setBackground(rollImage.D8Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 10: {
+                        Utils.incrementRollTotal(this, "totald10rolls");
                         //v.setBackground(D10Image(rollValue));
                         v.setBackground(rollImage.D10Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 12: {
+                        Utils.incrementRollTotal(this, "totald12rolls");
                         //v.setBackground(D12Image(rollValue));
                         v.setBackground(rollImage.D12Image(rollValue)); //new implementation
                         isRolling = false;
                         break;
                     }
                     case 20: {
+                        Utils.incrementRollTotal(this, "totald20rolls");
                         //v.setBackground(D20Image(rollValue));
                         v.setBackground(rollImage.D20Image(rollValue)); //new implementation
                         if (rollValue == 20) {
